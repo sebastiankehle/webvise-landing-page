@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ModeToggle } from "@/components/mode-toggle";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useMobileMenu } from "./mobile-menu-provider";
+import { useMobileMenu } from "@/providers/mobile-menu-provider";
 import { Nav } from "./nav";
 import { cn } from "@/lib/utils";
 
@@ -53,7 +53,7 @@ export function Header() {
       {isOpen && (
         <Nav
           className="flex flex-col items-center justify-center h-[calc(100vh-5rem)] gap-12 md:hidden"
-          linkClassName="text-3xl font-medium"
+          linkClassName="text-xl font-medium"
           onNavClick={() => onOpenChange(false)}
         />
       )}
