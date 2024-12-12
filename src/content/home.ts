@@ -1,24 +1,28 @@
 export const heroContent = {
   badges: [
     {
-      text: "Startups",
+      text: "Landing Pages",
       variant: "secondary" as const,
     },
     {
-      text: "Scale-ups",
+      text: "MVPs",
+      variant: "outline" as const,
+    },
+    {
+      text: "Enterprise",
       variant: "outline" as const,
     },
   ],
-  headline: "Let's build your next digital product",
+  headline: "Transform Your Vision Into Digital Reality",
   description:
-    "Helping startups and scale-ups build exceptional digital products with modern web technologies and AI integration.",
+    "Specialized in crafting high-converting landing pages, building market-ready MVPs, and developing enterprise-grade solutions. From concept to launch, we're your technical partner for sustainable digital growth.",
   cta: {
     primary: {
-      text: "Get in Touch",
+      text: "Start Your Project",
       href: "/contact",
     },
     secondary: {
-      text: "View Our Work",
+      text: "View Portfolio",
       href: "/work",
     },
   },
