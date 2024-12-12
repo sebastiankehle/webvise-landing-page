@@ -15,7 +15,7 @@ export const heroContent = {
   ],
   headline: "Transform Your Vision Into Digital Reality",
   description:
-    "Specialized in crafting high-converting landing pages, building market-ready MVPs, and developing enterprise-grade solutions. From concept to launch, we're your technical partner for sustainable digital growth.",
+    "Specialized in crafting high-converting landing pages, building market-ready MVPs, and developing enterprise-grade solutions. From concept to launch in weeks, not months.",
   cta: {
     primary: {
       text: "Start Your Project",
