@@ -8,7 +8,10 @@ import { heroContent } from "@/content/home";
 
 export function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center text-center px-4 pb-12 pt-20 md:pt-28 space-y-6">
+    <section
+      id="hero"
+      className="flex flex-col items-center justify-center text-center px-4 pb-12 pt-20 md:pt-28 space-y-6"
+    >
       <div className="flex flex-col items-center space-y-4">
         <FadeIn delay={0.05}>
           <div className="flex flex-wrap items-center justify-center gap-2">

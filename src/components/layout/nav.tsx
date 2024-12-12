@@ -1,14 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-
-export const navItems = [
-  { href: "/features", label: "Features" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
-] as const;
+import Link from "next/link";
+import { useActiveSection } from "@/hooks/use-active-section";
 
 interface NavProps {
   className?: string;
@@ -16,8 +10,15 @@ interface NavProps {
   onNavClick?: () => void;
 }
 
+const navItems = [
+  { href: "/#hero", label: "Home", sectionId: "hero" },
+  { href: "/features", label: "Features" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/about", label: "About" },
+];
+
 export function Nav({ className, linkClassName, onNavClick }: NavProps) {
-  const pathname = usePathname();
+  const activeSection = useActiveSection();
 
   return (
     <nav className={className}>
@@ -25,12 +26,14 @@ export function Nav({ className, linkClassName, onNavClick }: NavProps) {
         <Link
           key={item.href}
           href={item.href}
-          onClick={onNavClick}
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname === item.href ? "text-foreground" : "text-foreground/60",
-            linkClassName
+            linkClassName,
+            "text-muted-foreground transition-colors hover:text-foreground",
+            item.sectionId &&
+              activeSection === item.sectionId &&
+              "text-foreground font-medium"
           )}
+          onClick={onNavClick}
         >
           {item.label}
         </Link>
