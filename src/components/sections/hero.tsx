@@ -12,26 +12,18 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen flex-col items-center justify-center px-4 pb-12 text-center"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-          <div className="fixed left-0 right-0 top-1/4 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-foreground/5 blur-[100px]" />
-        </div>
-      </div>
-
       <div className="flex max-w-5xl flex-col items-center space-y-8">
         <FadeIn delay={0.05}>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {heroContent.badges.map((badge) => (
               <Badge
+                className="rounded-full px-4 py-1.5"
+                variant="outline"
                 key={badge.text}
-                variant={badge.variant}
-                className="group relative rounded-full border px-4 py-1.5 text-sm font-medium transition-colors hover:bg-foreground/[0.03]"
               >
                 {badge.icon && (
                   <badge.icon
-                    className="mr-2 inline-block h-4 w-4"
+                    className="mr-2 inline-block h-4 w-4 text-muted-foreground"
                     strokeWidth={1.5}
                   />
                 )}

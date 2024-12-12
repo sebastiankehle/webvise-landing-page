@@ -1,29 +1,27 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
-interface FadeInProps extends HTMLMotionProps<"div"> {
+export function FadeIn({
+  children,
+  className,
+  delay = 0,
+}: {
   children: React.ReactNode;
+  className?: string;
   delay?: number;
-}
-
-export function FadeIn({ children, delay = 0, ...props }: FadeInProps) {
+}) {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 10,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.4,
         delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
+        ease: "easeOut",
       }}
-      {...props}
+      className={cn(className)}
     >
       {children}
     </motion.div>

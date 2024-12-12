@@ -1,5 +1,6 @@
-import { Metadata } from "next";
 import { Hero } from "@/components/sections/hero";
+import { Metrics } from "@/components/sections/metrics";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "webvise | Web Development and AI Solutions",
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Metrics />
     </>
   );
 }
