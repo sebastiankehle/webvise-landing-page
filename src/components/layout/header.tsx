@@ -12,7 +12,7 @@ export function Header() {
   const { isOpen, onOpenChange } = useMobileMenu();
 
   const headerContent = (
-    <div className="mx-auto max-w-7xl rounded-full border bg-background/95 px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div className="mx-auto max-w-7xl rounded-full border border-white/10 bg-background/50 px-6 backdrop-blur-xl supports-[backdrop-filter]:bg-background/20">
       <div className="flex h-14 items-center justify-between">
         <div className="flex-1">
           <Link href="/" className="text-base font-bold">
@@ -22,7 +22,7 @@ export function Header() {
 
         <Nav
           className="hidden md:flex items-center justify-center gap-8 flex-1"
-          linkClassName="text-[13px] font-medium"
+          linkClassName="text-[13px] font-medium transition-colors"
         />
 
         <div className="flex-1 flex items-center justify-end gap-2">
@@ -44,11 +44,11 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50",
+        "fixed top-0 left-0 right-0 z-50 px-4 py-3",
         isOpen && "bottom-0 bg-background"
       )}
     >
-      <div className="px-4 py-3">{headerContent}</div>
+      {headerContent}
 
       {isOpen && (
         <Nav

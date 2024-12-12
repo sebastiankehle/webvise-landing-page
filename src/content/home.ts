@@ -1,21 +1,33 @@
+import { Rocket, Gem, Building2 } from "lucide-react";
+
 export const heroContent = {
   badges: [
     {
       text: "Landing Pages",
-      variant: "secondary" as const,
+      variant: "outline" as const,
+      icon: Rocket,
     },
     {
       text: "MVPs",
       variant: "outline" as const,
+      icon: Gem,
     },
     {
       text: "Enterprise",
       variant: "outline" as const,
+      icon: Building2,
     },
   ],
-  headline: "Transform Your Vision Into Digital Reality",
-  description:
-    "Specialized in crafting high-converting landing pages, building market-ready MVPs, and developing enterprise-grade solutions. From concept to launch in weeks, not months.",
+  headline: {
+    primary: "Transform Your Vision",
+    highlight: "Into Digital Reality",
+  },
+  description: {
+    primary:
+      "Specialized in crafting high-converting landing pages, building market-ready MVPs,",
+    secondary: "and developing enterprise-grade solutions.",
+    emphasis: "From concept to launch in weeks, not months.",
+  },
   cta: {
     primary: {
       text: "Start Your Project",
