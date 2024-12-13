@@ -2,6 +2,7 @@ import {
   SiClaude,
   SiDocker,
   SiDrizzle,
+  SiFlutter,
   SiHuggingface,
   SiLangchain,
   SiMongodb,
@@ -19,6 +20,8 @@ import {
   SiTypeorm,
   SiTypescript,
   SiVercel,
+  SiWebflow,
+  SiWordpress,
 } from "react-icons/si";
 
 export const techContent = {
@@ -27,6 +30,7 @@ export const techContent = {
     secondary: "Leveraging cutting-edge technologies for optimal performance",
   },
   technologies: [
+    // Frontend & UI
     {
       name: "Next.js",
       icon: SiNextdotjs,
@@ -43,11 +47,6 @@ export const techContent = {
       url: "https://www.typescriptlang.org",
     },
     {
-      name: "Nest.js",
-      icon: SiNestjs,
-      url: "https://nestjs.com",
-    },
-    {
       name: "Tailwind CSS",
       icon: SiTailwindcss,
       url: "https://tailwindcss.com",
@@ -56,6 +55,30 @@ export const techContent = {
       name: "shadcn/ui",
       icon: SiShadcnui,
       url: "https://ui.shadcn.com",
+    },
+    {
+      name: "Flutter",
+      icon: SiFlutter,
+      url: "https://flutter.dev",
+    },
+
+    // CMS & No-Code
+    {
+      name: "Webflow",
+      icon: SiWebflow,
+      url: "https://webflow.com",
+    },
+    {
+      name: "WordPress",
+      icon: SiWordpress,
+      url: "https://wordpress.org",
+    },
+
+    // Backend & APIs
+    {
+      name: "Nest.js",
+      icon: SiNestjs,
+      url: "https://nestjs.com",
     },
     {
       name: "Prisma",
@@ -72,6 +95,8 @@ export const techContent = {
       icon: SiTypeorm,
       url: "https://typeorm.io",
     },
+
+    // Databases & Storage
     {
       name: "PostgreSQL",
       icon: SiPostgresql,
@@ -92,11 +117,8 @@ export const techContent = {
       icon: SiSupabase,
       url: "https://supabase.com",
     },
-    {
-      name: "Vercel",
-      icon: SiVercel,
-      url: "https://vercel.com",
-    },
+
+    // AI & ML
     {
       name: "OpenAI",
       icon: SiOpenai,
@@ -122,10 +144,17 @@ export const techContent = {
       icon: SiTensorflow,
       url: "https://tensorflow.org",
     },
+
+    // DevOps & Infrastructure
     {
       name: "Docker",
       icon: SiDocker,
       url: "https://www.docker.com",
+    },
+    {
+      name: "Vercel",
+      icon: SiVercel,
+      url: "https://vercel.com",
     },
   ],
 } as const;

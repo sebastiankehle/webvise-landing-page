@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
+import { Services } from "@/components/sections/services";
 import { Tech } from "@/components/sections/tech";
 import { Metadata } from "next";
 
@@ -23,6 +24,7 @@ export default function Home() {
     <>
       <Hero />
       <Tech />
+      <Services />
       <Metrics />
     </>
   );

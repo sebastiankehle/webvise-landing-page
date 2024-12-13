@@ -33,7 +33,7 @@ export function Hero() {
                       "mr-2 inline-block h-4 w-4",
                       index === 0 && "text-[hsl(var(--accent-1))]",
                       index === 1 && "text-[hsl(var(--accent-2))]",
-                      index === 2 && "text-[#E42AED]" // Solana magenta
+                      index === 2 && "text-[hsl(var(--accent-3))]"
                     )}
                     strokeWidth={1.5}
                   />
@@ -46,7 +46,7 @@ export function Hero() {
 
         <div className="space-y-4">
           <FadeIn delay={0.1}>
-            <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            <h1 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
               <span>{heroContent.headline.primary}</span>
               <span className="mt-2 block pb-4">
                 {heroContent.headline.highlight}
