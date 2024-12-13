@@ -2,6 +2,7 @@ import { Benefits } from "@/components/sections/benefits";
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
 import { Services } from "@/components/sections/services";
+import { Solutions } from "@/components/sections/solutions";
 import { Tech } from "@/components/sections/tech";
 import { Metadata } from "next";
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Benefits />
       <Services />
       <Metrics />
+      <Solutions />
     </>
   );
 }
