@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/tooltip";
 import { techContent } from "@/content/tech";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function Tech() {
   return (
@@ -17,12 +18,7 @@ export function Tech() {
         <div className="relative flex w-full justify-center">
           <div className="absolute inset-y-0 left-0 z-10 w-48 bg-gradient-to-r from-background via-background/80 to-transparent" />
           <div className="absolute inset-y-0 right-0 z-10 w-48 bg-gradient-to-l from-background via-background/80 to-transparent" />
-          <div
-            className={cn(
-              "flex items-center gap-16",
-              "animate-[slide_35s_linear_infinite] hover:[animation-play-state:paused]"
-            )}
-          >
+          <div className={cn("flex items-center gap-6", "w-max animate-slide")}>
             <TooltipProvider>
               {[
                 ...techContent.technologies,
@@ -32,17 +28,25 @@ export function Tech() {
               ].map((tech, i) => (
                 <Tooltip key={`${tech.name}-${i}`} delayDuration={0}>
                   <TooltipTrigger asChild>
-                    <a
-                      href={tech.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <div
                       className={cn(
-                        "transition-transform hover:scale-110",
-                        "text-muted-foreground hover:text-foreground"
+                        "group relative flex h-20 items-center justify-center rounded-2xl bg-background/50 p-4",
+                        "transition-all duration-300",
+                        "opacity-50 hover:opacity-100"
                       )}
                     >
-                      <tech.icon className="h-6 w-6 sm:h-8 sm:w-8" />
-                    </a>
+                      <Link
+                        href={tech.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn(
+                          "flex h-12 w-12 items-center justify-center",
+                          "transition-transform duration-300 hover:scale-110"
+                        )}
+                      >
+                        <tech.icon className="h-6 w-6" />
+                      </Link>
+                    </div>
                   </TooltipTrigger>
                   <TooltipContent
                     side="bottom"

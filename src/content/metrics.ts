@@ -15,8 +15,7 @@ export const metricsContent = {
       "Our products consistently outperform generic solutions and industry standards.",
   },
   description: {
-    views:
-      "We consistently achieve higher engagement rates, driving more organic traffic. ",
+    views: "Achieve higher engagement rates and drive more organic traffic.",
     clicks: "Benefit from improved conversion rates and user interactions.",
   },
   metrics: {

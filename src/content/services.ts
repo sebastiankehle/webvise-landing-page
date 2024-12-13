@@ -1,6 +1,10 @@
 import { Bot, Code2, Layout, Smartphone } from "lucide-react";
 
 export const servicesContent = {
+  badge: {
+    text: "Our Services",
+    variant: "outline" as const,
+  },
   headline: {
     primary: "Full-Stack Development Services",
     secondary: "End-to-end solutions for your digital presence",

@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@/components/ui/badge";
 import { servicesContent } from "@/content/services";
 import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
@@ -8,7 +9,13 @@ export function Services() {
   return (
     <section className="relative overflow-hidden px-4 py-16">
       <InView className="mx-auto max-w-5xl space-y-8">
-        <div className="text-center">
+        <div className="space-y-6 text-center">
+          <Badge
+            variant={servicesContent.badge.variant}
+            className="rounded-full px-4 py-1.5"
+          >
+            {servicesContent.badge.text}
+          </Badge>
           <h2 className="text-2xl font-bold sm:text-3xl">
             {servicesContent.headline.primary}
           </h2>
@@ -18,12 +25,12 @@ export function Services() {
         </div>
 
         <div className="mt-20 grid gap-8 sm:grid-cols-2">
-          <div className="absolute inset-0 hidden sm:block">
-            <div className="absolute left-[25%] right-[25%] top-[25%] h-px bg-border" />
-            <div className="absolute left-[25%] right-[25%] top-[75%] h-px bg-border" />
-            <div className="absolute bottom-[25%] left-1/2 top-[25%] w-px bg-border" />
-            <div className="absolute left-1/2 top-[25%] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-border" />
-            <div className="absolute left-1/2 top-[75%] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-border" />
+          <div className="pointer-events-none absolute inset-0 hidden sm:block">
+            <div className="absolute left-[calc(25%+1.5rem)] right-[calc(25%+1.5rem)] top-[calc(25%+4rem)] h-px bg-border" />
+            <div className="absolute left-[calc(25%+1.5rem)] right-[calc(25%+1.5rem)] top-[calc(75%+4rem)] h-px bg-border" />
+            <div className="absolute bottom-[calc(25%-4rem)] left-1/2 top-[calc(25%+4rem)] w-px bg-border" />
+            <div className="absolute left-1/2 top-[calc(25%+4rem)] h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-border" />
+            <div className="absolute left-1/2 top-[calc(75%+4rem)] h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-border" />
           </div>
 
           {servicesContent.services.map((service, index) => (
