@@ -1,31 +1,38 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="icon" className="h-9 w-9">
+        <div className="h-5 w-5" />
+      </Button>
+    );
+  }
 
   return (
     <Button
       variant="ghost"
       size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+      className="h-9 w-9"
     >
-      <Sun
-        className={cn(
-          "h-5 w-5 rotate-0 scale-100 transition-all",
-          theme === "light" && "rotate-90 scale-0"
-        )}
-      />
-      <Moon
-        className={cn(
-          "absolute h-5 w-5 rotate-90 scale-0 transition-all",
-          theme === "light" && "rotate-0 scale-100"
-        )}
-      />
+      {resolvedTheme === "dark" ? (
+        <Sun className="h-5 w-5" />
+      ) : (
+        <Moon className="h-5 w-5" />
+      )}
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

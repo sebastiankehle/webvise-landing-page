@@ -86,3 +86,12 @@ body {
     @apply border-[hsl(var(--border-accent-2))] ring-2 ring-[hsl(var(--ring-accent-2))] hover:bg-[hsl(var(--hover-accent-2))];
   }
 }
+
+@keyframes flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}

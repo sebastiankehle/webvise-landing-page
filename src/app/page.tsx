@@ -1,6 +1,7 @@
 import { Benefits } from "@/components/sections/benefits";
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
+import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { Solutions } from "@/components/sections/solutions";
 import { Tech } from "@/components/sections/tech";
@@ -28,6 +29,7 @@ export default function Home() {
       <Tech />
       <Benefits />
       <Services />
+      <Process />
       <Metrics />
       <Solutions />
     </>
