@@ -25,7 +25,7 @@ export function Testimonials({ id }: TestimonialsProps) {
           </p>
         </div>
 
-        <div className="relative mt-16 space-y-4">
+        <div className="relative mt-16 space-y-8">
           {/* First row */}
           <div className="relative flex overflow-hidden">
             {/* Gradient masks */}

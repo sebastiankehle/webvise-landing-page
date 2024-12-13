@@ -11,6 +11,16 @@ import { Nav } from "./nav";
 export function Header() {
   const { isOpen, onOpenChange } = useMobileMenu();
 
+  const handleScroll = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      if (isOpen) {
+        onOpenChange(false);
+      }
+    }
+  };
+
   const headerContent = (
     <div
       className={cn(
@@ -30,7 +40,7 @@ export function Header() {
           linkClassName="text-[13px] font-medium transition-colors"
         />
 
-        <div className="flex flex-1 items-center justify-end gap-2">
+        <div className="flex flex-1 items-center justify-end gap-3">
           <ModeToggle />
           <Button
             variant="ghost"
@@ -40,6 +50,19 @@ export function Header() {
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             <span className="sr-only">Toggle menu</span>
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleScroll("#contact")}
+            className={cn(
+              "hidden rounded-full px-4 md:inline-flex",
+              "border-[hsl(var(--accent-1))]",
+              "hover:border-[hsl(var(--accent-1))] hover:brightness-125",
+              "hover:bg-transparent"
+            )}
+          >
+            Get Started
           </Button>
         </div>
       </div>
@@ -60,6 +83,7 @@ export function Header() {
           className="flex h-[calc(100vh-5rem)] flex-col items-center justify-center gap-12 md:hidden"
           linkClassName="text-xl font-medium"
           onNavClick={() => onOpenChange(false)}
+          showGetStarted={true}
         />
       )}
     </header>

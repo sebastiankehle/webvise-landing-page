@@ -1,4 +1,4 @@
-import { ContactForm } from "@/components/contact/contact-form";
+import { ContactForm } from "@/components/forms/contact-form";
 import { Badge } from "@/components/ui/badge";
 import { contactContent } from "@/content/contact";
 import { InView } from "../animations/in-view";
@@ -15,7 +15,7 @@ export function ContactSection({ id }: ContactSectionProps) {
       <InView className="mx-auto max-w-7xl">
         <div className="space-y-6 text-center">
           <Badge variant="outline" className="rounded-full px-4 py-1.5">
-            Contact Us
+            {contactContent.badge.label}
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             {headline.title}

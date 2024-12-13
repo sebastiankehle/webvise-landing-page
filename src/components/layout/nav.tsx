@@ -1,61 +1,61 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { navigation } from "@/content/navigation";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
 
-const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "Benefits", href: "#benefits" },
-  { name: "Services", href: "#services" },
-  { name: "Process", href: "#process" },
-  { name: "Solutions", href: "#solutions" },
-];
+interface NavProps {
+  className?: string;
+  linkClassName?: string;
+  onNavClick?: () => void;
+  showGetStarted?: boolean;
+}
 
-export function Nav() {
-  const [activeSection, setActiveSection] = useState("home");
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    document.querySelectorAll("section[id]").forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+export function Nav({
+  className,
+  linkClassName,
+  onNavClick,
+  showGetStarted,
+}: NavProps) {
+  const handleScroll = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      // Call onNavClick (which closes mobile menu) if provided
+      if (onNavClick) {
+        onNavClick();
+      }
+    }
+  };
 
   return (
-    <nav className="hidden gap-1 md:flex">
+    <nav className={className}>
       {navigation.map((item) => (
-        <a
-          key={item.name}
-          href={item.href}
+        <button
+          key={item.label}
+          onClick={() => handleScroll(item.href)}
           className={cn(
-            "rounded-md px-3 py-2 text-sm transition-colors",
-            "hover:text-foreground/80",
-            activeSection === item.href.slice(1)
-              ? "text-foreground"
-              : "text-foreground/60"
+            "text-muted-foreground transition-colors hover:text-foreground",
+            linkClassName
           )}
-          onClick={(e) => {
-            e.preventDefault();
-            document.querySelector(item.href)?.scrollIntoView({
-              behavior: "smooth",
-            });
-          }}
         >
-          {item.name}
-        </a>
+          {item.label}
+        </button>
       ))}
+      {showGetStarted && (
+        <Button
+          variant="outline"
+          onClick={() => handleScroll("#contact")}
+          className={cn(
+            "rounded-full px-8",
+            "border-[hsl(var(--accent-1))]",
+            "hover:border-[hsl(var(--accent-1))] hover:brightness-125",
+            "hover:bg-transparent"
+          )}
+        >
+          Get Started
+        </Button>
+      )}
     </nav>
   );
 }

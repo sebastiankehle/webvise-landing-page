@@ -20,6 +20,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import type { ContactFormValues } from "@/content/contact";
 import { contactContent, contactFormSchema } from "@/content/contact";
+import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
@@ -53,12 +54,12 @@ export function ContactForm() {
       }
 
       form.reset();
-      toast.success("Message sent successfully!", {
-        description: "We'll get back to you within 24 hours.",
+      toast.success(contactContent.form.success, {
+        description: contactContent.form.successDescription,
       });
     } catch (error) {
-      toast.error("Failed to send message", {
-        description: "Please try again later or contact us directly.",
+      toast.error(contactContent.form.error, {
+        description: contactContent.form.errorDescription,
       });
       console.error("Failed to send message:", error);
     } finally {
@@ -186,14 +187,24 @@ export function ContactForm() {
           )}
         />
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button
+          type="submit"
+          variant="outline"
+          className={cn(
+            "group rounded-full px-8 transition-all",
+            "border border-[hsl(var(--accent-1))]",
+            "hover:border-[hsl(var(--accent-1))] hover:brightness-125",
+            "hover:bg-transparent"
+          )}
+          disabled={isSubmitting}
+        >
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Sending...
+              {contactContent.form.send}
             </>
           ) : (
-            "Send Message"
+            contactContent.form.send
           )}
         </Button>
       </form>

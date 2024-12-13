@@ -12,6 +12,9 @@ export const contactFormSchema = z.object({
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export const contactContent = {
+  badge: {
+    label: "Get in touch",
+  },
   headline: {
     title: "Let's Build Something Great Together",
     description:
@@ -30,5 +33,11 @@ export const contactContent = {
       { label: "€25,000 - €50,000", value: "25k-50k" },
       { label: "> €50,000", value: ">50k" },
     ],
+    sending: "Sending...",
+    success: "Message sent successfully!",
+    successDescription: "We'll get back to you within 24 hours.",
+    error: "An error occurred while sending the message.",
+    errorDescription: "Please try again later or contact us directly.",
+    send: "Send Message",
   },
 } as const;
