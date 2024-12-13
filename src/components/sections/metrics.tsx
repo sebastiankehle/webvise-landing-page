@@ -179,13 +179,14 @@ export function Metrics({ id }: MetricsProps) {
                                   style={{
                                     display: "flex",
                                     alignItems: "center",
-                                    gap: "8px",
+                                    gap: "4px",
+                                    flexWrap: "wrap",
                                   }}
                                 >
                                   <span
                                     style={{
                                       color: "hsl(var(--muted-foreground))",
-                                      marginRight: "8px",
+                                      marginRight: "4px",
                                     }}
                                   >
                                     {name.charAt(0).toUpperCase() +
@@ -200,9 +201,9 @@ export function Metrics({ id }: MetricsProps) {
                                     style={{
                                       color,
                                       backgroundColor: `${color}20`,
-                                      padding: "2px 8px",
+                                      padding: "1px 6px",
                                       borderRadius: "4px",
-                                      fontSize: "13px",
+                                      fontSize: "12px",
                                     }}
                                   >
                                     {growth}

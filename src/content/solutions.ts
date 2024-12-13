@@ -15,7 +15,7 @@ import {
 
 export const solutionsContent = {
   badge: {
-    text: "Solutions",
+    text: "Pricing",
     variant: "outline" as const,
   },
   headline: {

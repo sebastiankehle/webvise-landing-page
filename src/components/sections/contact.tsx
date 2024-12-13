@@ -6,7 +6,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 import { contactContent, faqContent } from "@/content/contact";
+import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
 interface ContactSectionProps {
@@ -19,48 +21,96 @@ export function ContactSection({ id }: ContactSectionProps) {
   return (
     <section id={id} className="relative px-4 py-24">
       <InView className="mx-auto max-w-7xl">
-        <div className="space-y-6 text-center">
+        <div className="mx-auto max-w-2xl space-y-4 text-center">
           <Badge variant="outline" className="rounded-full px-4 py-1.5">
             {contactContent.badge.label}
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             {headline.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-balance text-lg text-muted-foreground">
+          <p className="text-balance text-muted-foreground">
             {headline.description}
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+        <div className="mt-16 grid gap-16 lg:grid-cols-2">
           {/* Contact Form */}
-          <div className="rounded-lg border bg-card/50 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <ContactForm />
+          <div>
+            <div className="mb-6">
+              <div className="flex items-center gap-4">
+                <h3 className="text-xl font-semibold">Get in Touch</h3>
+                <Separator className="flex-1" />
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Fill out the form below and we&apos;ll get back to you within 24
+                hours.
+              </p>
+            </div>
+            <div
+              className={cn(
+                "rounded-lg border bg-card/50 p-8 backdrop-blur",
+                "supports-[backdrop-filter]:bg-background/60",
+                "ring-1 ring-inset ring-[hsl(var(--accent-1))]",
+                "h-fit"
+              )}
+            >
+              <ContactForm />
+            </div>
           </div>
 
           {/* FAQs */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold">
-              Frequently Asked Questions
-            </h3>
-            {faqContent.tabs.map((tab) => (
-              <div key={tab.value} className="space-y-4">
-                <h4 className="text-sm font-medium text-muted-foreground">
-                  {tab.label}
-                </h4>
-                <Accordion type="single" collapsible className="w-full">
-                  {tab.questions.map((faq, index) => (
-                    <AccordionItem key={index} value={`${tab.value}-${index}`}>
-                      <AccordionTrigger className="text-left">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-sm text-muted-foreground">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+          <div>
+            <div className="mb-6">
+              <div className="flex items-center gap-4">
+                <h3 className="text-xl font-semibold">
+                  Frequently Asked Questions
+                </h3>
+                <Separator className="flex-1" />
               </div>
-            ))}
+              <p className="mt-2 text-sm text-muted-foreground">
+                Find quick answers to common questions about our services and
+                process.
+              </p>
+            </div>
+
+            <div
+              className={cn(
+                "rounded-lg border bg-card/50 p-8 backdrop-blur",
+                "supports-[backdrop-filter]:bg-background/60",
+                "space-y-6"
+              )}
+            >
+              {faqContent.tabs.map((tab) => (
+                <div key={tab.value}>
+                  <div className="mb-3 flex items-center gap-4">
+                    <h4 className="text-sm font-medium text-[hsl(var(--accent-1))]">
+                      {tab.label}
+                    </h4>
+                    <Separator className="flex-1" />
+                  </div>
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="w-full space-y-2"
+                  >
+                    {tab.questions.map((faq, index) => (
+                      <AccordionItem
+                        key={index}
+                        value={`${tab.value}-${index}`}
+                        className="border-none"
+                      >
+                        <AccordionTrigger className="rounded-md bg-muted/40 px-4 py-3 text-left hover:bg-muted/60 hover:no-underline [&[data-state=open]]:bg-muted/60">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="px-4 pt-2 text-sm text-muted-foreground">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </InView>

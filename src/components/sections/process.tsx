@@ -94,36 +94,37 @@ export function Process({ id }: ProcessProps) {
                     )}
                   />
 
-                  {/* Step Number */}
-                  <div
-                    className={cn(
-                      "absolute -right-4 -top-4 h-16 w-16 rounded-full transition-transform duration-500 group-hover:scale-[2]",
-                      getAccentBg(index) + "/10"
-                    )}
-                  />
-                  <span className="absolute right-2 top-2 text-sm font-semibold text-muted-foreground">
-                    {(index + 1).toString().padStart(2, "0")}
-                  </span>
+                  <div className="space-y-4">
+                    {/* Step Number */}
+                    <span
+                      className={cn(
+                        "block text-sm font-medium",
+                        getAccentColor(index)
+                      )}
+                    >
+                      Step {(index + 1).toString().padStart(2, "0")}
+                    </span>
 
-                  {/* Icon */}
-                  <div
-                    className={cn(
-                      "mb-4 inline-flex rounded-xl p-2.5 transition-transform duration-500 group-hover:scale-110",
-                      getAccentBg(index) + "/10"
-                    )}
-                  >
-                    <step.icon
-                      className={cn("h-5 w-5", getAccentColor(index))}
-                      strokeWidth={1.5}
-                    />
-                  </div>
+                    {/* Icon */}
+                    <div
+                      className={cn(
+                        "flex h-10 w-10 items-center justify-center rounded-xl transition-transform duration-500 group-hover:scale-110",
+                        getAccentBg(index) + "/10"
+                      )}
+                    >
+                      <step.icon
+                        className={cn("h-5 w-5", getAccentColor(index))}
+                        strokeWidth={1.5}
+                      />
+                    </div>
 
-                  {/* Content */}
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {step.description}
-                    </p>
+                    {/* Content */}
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-semibold">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
 
                   {/* Bottom Accent */}
