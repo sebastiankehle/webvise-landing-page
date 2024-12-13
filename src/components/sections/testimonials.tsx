@@ -18,7 +18,7 @@ interface TestimonialsProps {
 
 export function Testimonials({ id }: TestimonialsProps) {
   return (
-    <section id={id} className="relative px-4 py-24">
+    <section id={id} className="relative overflow-x-hidden px-4 py-24">
       <InView className="mx-auto max-w-7xl">
         <div className="space-y-6 text-center">
           <Badge variant="outline" className="rounded-full px-4 py-1.5">
