@@ -31,11 +31,11 @@ export const heroContent = {
   cta: {
     primary: {
       text: "Start Your Project",
-      href: "/contact",
+      href: "#contact",
     },
     secondary: {
-      text: "View Portfolio",
-      href: "/work",
+      text: "View Solutions",
+      href: "#solutions",
     },
   },
 } as const;

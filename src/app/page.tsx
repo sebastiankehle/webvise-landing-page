@@ -1,4 +1,5 @@
 import { Benefits } from "@/components/sections/benefits";
+import { ContactSection } from "@/components/sections/contact";
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
 import { Process } from "@/components/sections/process";
@@ -34,6 +35,7 @@ export default function Home() {
       <Process id="process" />
       <Testimonials id="testimonials" />
       <Solutions id="solutions" />
+      <ContactSection id="contact" />
     </>
   );
 }

@@ -13,6 +13,13 @@ interface HeroProps {
 }
 
 export function Hero({ id }: HeroProps) {
+  const handleScroll = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id={id}
@@ -87,6 +94,7 @@ export function Hero({ id }: HeroProps) {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => handleScroll(heroContent.cta.primary.href)}
               className={cn(
                 "group rounded-full px-8 transition-all",
                 "border border-[hsl(var(--accent-1))]",
@@ -100,6 +108,7 @@ export function Hero({ id }: HeroProps) {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => handleScroll(heroContent.cta.secondary.href)}
               className={cn(
                 "rounded-full px-8 transition-all",
                 "border border-[hsl(var(--accent-2))]",
