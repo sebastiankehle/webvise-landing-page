@@ -41,3 +41,71 @@ export const contactContent = {
     send: "Send Message",
   },
 } as const;
+
+export const faqContent = {
+  tabs: [
+    {
+      label: "General",
+      value: "general",
+      questions: [
+        {
+          question: "How long does a typical project take?",
+          answer:
+            "Most projects are completed within 4-12 weeks, depending on scope and complexity. We'll provide a detailed timeline during our initial consultation.",
+        },
+        {
+          question: "What is your development process?",
+          answer:
+            "We follow an agile methodology with weekly updates. This includes planning, design, development, testing, and deployment phases with regular client feedback.",
+        },
+        {
+          question: "Do you provide ongoing support?",
+          answer:
+            "Yes, we offer various maintenance and support packages to ensure your solution stays up-to-date and performs optimally.",
+        },
+      ],
+    },
+    {
+      label: "Technical",
+      value: "technical",
+      questions: [
+        {
+          question: "What technologies do you use?",
+          answer:
+            "We specialize in modern web technologies including React, Next.js, TypeScript, and Node.js. We also integrate AI solutions using various frameworks.",
+        },
+        {
+          question: "Can you handle both frontend and backend?",
+          answer:
+            "Yes, we provide full-stack development services, ensuring seamless integration between frontend and backend systems.",
+        },
+        {
+          question: "Do you work with existing systems?",
+          answer:
+            "Yes, we can integrate with your existing systems or build new solutions from scratch, depending on your needs.",
+        },
+      ],
+    },
+    {
+      label: "Commercial",
+      value: "commercial",
+      questions: [
+        {
+          question: "What are your payment terms?",
+          answer:
+            "We typically work with a 40% upfront deposit and remaining payments tied to project milestones. All terms are clearly outlined in our proposal.",
+        },
+        {
+          question: "Do you offer fixed-price projects?",
+          answer:
+            "Yes, we offer both fixed-price and time-and-materials pricing models, depending on project requirements and scope clarity.",
+        },
+        {
+          question: "What's included in the price?",
+          answer:
+            "Our prices include planning, development, testing, deployment, and initial support. We'll provide a detailed breakdown in our proposal.",
+        },
+      ],
+    },
+  ],
+} as const;

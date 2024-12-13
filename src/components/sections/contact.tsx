@@ -1,6 +1,12 @@
 import { ContactForm } from "@/components/forms/contact-form";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { contactContent } from "@/content/contact";
+import { contactContent, faqContent } from "@/content/contact";
 import { InView } from "../animations/in-view";
 
 interface ContactSectionProps {
@@ -25,9 +31,36 @@ export function ContactSection({ id }: ContactSectionProps) {
           </p>
         </div>
 
-        <div className="mt-16">
-          <div className="mx-auto max-w-2xl rounded-lg border bg-card/50 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+          {/* Contact Form */}
+          <div className="rounded-lg border bg-card/50 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <ContactForm />
+          </div>
+
+          {/* FAQs */}
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold">
+              Frequently Asked Questions
+            </h3>
+            {faqContent.tabs.map((tab) => (
+              <div key={tab.value} className="space-y-4">
+                <h4 className="text-sm font-medium text-muted-foreground">
+                  {tab.label}
+                </h4>
+                <Accordion type="single" collapsible className="w-full">
+                  {tab.questions.map((faq, index) => (
+                    <AccordionItem key={index} value={`${tab.value}-${index}`}>
+                      <AccordionTrigger className="text-left">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-sm text-muted-foreground">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            ))}
           </div>
         </div>
       </InView>
