@@ -4,18 +4,24 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { heroContent } from "@/content/hero";
-import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[85vh] flex-col items-center justify-center px-4 pb-12 text-center"
+      className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-4 pb-12 text-center"
     >
+      <div className="pointer-events-none absolute inset-0">
+        <div className="animate-float-slow absolute left-[15%] top-1/4 h-24 w-24 rounded-full bg-[hsl(var(--accent-1))] opacity-[0.15] blur-xl" />
+        <div className="animate-float absolute right-[15%] top-1/3 h-32 w-32 rounded-full bg-[hsl(var(--accent-2))] opacity-[0.15] blur-xl" />
+      </div>
+
       <div className="flex max-w-5xl flex-col items-center space-y-8">
         <FadeIn delay={0.05}>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            {heroContent.badges.map((badge) => (
+            {heroContent.badges.map((badge, index) => (
               <Badge
                 className="rounded-full px-4 py-1.5"
                 variant="outline"
@@ -23,7 +29,12 @@ export function Hero() {
               >
                 {badge.icon && (
                   <badge.icon
-                    className="mr-2 inline-block h-4 w-4 text-muted-foreground"
+                    className={cn(
+                      "mr-2 inline-block h-4 w-4",
+                      index === 0 && "text-[hsl(var(--accent-1))]",
+                      index === 1 && "text-[hsl(var(--accent-2))]",
+                      index === 2 && "text-[#E42AED]" // Solana magenta
+                    )}
                     strokeWidth={1.5}
                   />
                 )}
@@ -58,7 +69,13 @@ export function Hero() {
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3">
             <Button
               size="lg"
-              className="group rounded-full px-8 transition-all hover:scale-105"
+              variant="outline"
+              className={cn(
+                "group rounded-full px-8 transition-all",
+                "border border-[hsl(var(--accent-1))]",
+                "hover:border-[hsl(var(--accent-1))] hover:brightness-125",
+                "hover:bg-transparent"
+              )}
             >
               {heroContent.cta.primary.text}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -66,12 +83,22 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full px-8 transition-all hover:scale-105"
+              className={cn(
+                "rounded-full px-8 transition-all",
+                "border border-[hsl(var(--accent-2))]",
+                "hover:border-[hsl(var(--accent-2))] hover:brightness-125",
+                "hover:bg-transparent"
+              )}
             >
               {heroContent.cta.secondary.text}
             </Button>
           </div>
         </FadeIn>
+      </div>
+
+      <div className="absolute bottom-8 flex flex-col items-center gap-2">
+        <span className="text-sm text-muted-foreground">Scroll to explore</span>
+        <ArrowDown className="h-4 w-4 animate-bounce text-muted-foreground" />
       </div>
     </section>
   );
