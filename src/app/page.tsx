@@ -25,9 +25,9 @@ export default function Home() {
     <>
       <Hero />
       <Tech />
+      <Benefits />
       <Services />
       <Metrics />
-      <Benefits />
     </>
   );
 }
