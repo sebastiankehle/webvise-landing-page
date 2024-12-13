@@ -133,10 +133,10 @@ export function Metrics() {
                           <Tooltip
                             contentStyle={{
                               backgroundColor: "hsl(var(--background))",
-                              border: "none",
+                              border: "1px solid hsl(var(--border))",
                               borderRadius: "8px",
                               padding: "12px",
-                              boxShadow: "0 0 10px rgba(0,0,0,0.25)",
+                              boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
                             }}
                             formatter={(value: number, name: string) => {
                               const color =

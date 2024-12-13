@@ -1,18 +1,23 @@
 "use client";
 
-import Link from "next/link";
-import { ModeToggle } from "@/components/ui/mode-toggle";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useMobileMenu } from "@/providers/mobile-menu-provider";
-import { Nav } from "./nav";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 import { cn } from "@/lib/utils";
+import { useMobileMenu } from "@/providers/mobile-menu-provider";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Nav } from "./nav";
 
 export function Header() {
   const { isOpen, onOpenChange } = useMobileMenu();
 
   const headerContent = (
-    <div className="mx-auto max-w-7xl rounded-full border border-white/10 bg-background/50 px-6 backdrop-blur-xl supports-[backdrop-filter]:bg-background/20">
+    <div
+      className={cn(
+        "mx-auto max-w-7xl rounded-full border bg-background/50 px-6 backdrop-blur-xl supports-[backdrop-filter]:bg-background/20",
+        "border-border"
+      )}
+    >
       <div className="flex h-14 items-center justify-between">
         <div className="flex-1">
           <Link href="/" className="text-base font-bold">
@@ -21,11 +26,11 @@ export function Header() {
         </div>
 
         <Nav
-          className="hidden md:flex items-center justify-center gap-8 flex-1"
+          className="hidden flex-1 items-center justify-center gap-8 md:flex"
           linkClassName="text-[13px] font-medium transition-colors"
         />
 
-        <div className="flex-1 flex items-center justify-end gap-2">
+        <div className="flex flex-1 items-center justify-end gap-2">
           <ModeToggle />
           <Button
             variant="ghost"
@@ -44,7 +49,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 px-4 py-3",
+        "fixed left-0 right-0 top-0 z-50 px-4 py-3",
         isOpen && "bottom-0 bg-background"
       )}
     >
@@ -52,7 +57,7 @@ export function Header() {
 
       {isOpen && (
         <Nav
-          className="flex flex-col items-center justify-center h-[calc(100vh-5rem)] gap-12 md:hidden"
+          className="flex h-[calc(100vh-5rem)] flex-col items-center justify-center gap-12 md:hidden"
           linkClassName="text-xl font-medium"
           onNavClick={() => onOpenChange(false)}
         />
