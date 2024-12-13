@@ -5,6 +5,7 @@ import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { Solutions } from "@/components/sections/solutions";
 import { Tech } from "@/components/sections/tech";
+import { Testimonials } from "@/components/sections/testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function Home() {
       <Metrics id="metrics" />
       <Services id="services" />
       <Process id="process" />
+      <Testimonials id="testimonials" />
       <Solutions id="solutions" />
     </>
   );
