@@ -1,6 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +10,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { testimonialsContent } from "@/content/testimonials";
-import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
 interface TestimonialsProps {
@@ -21,10 +21,7 @@ export function Testimonials({ id }: TestimonialsProps) {
     <section id={id} className="relative px-4 py-24">
       <InView className="mx-auto max-w-7xl">
         <div className="space-y-6 text-center">
-          <Badge
-            variant={testimonialsContent.badge.variant}
-            className="rounded-full px-4 py-1.5"
-          >
+          <Badge variant="outline" className="rounded-full px-4 py-1.5">
             {testimonialsContent.badge.text}
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -47,28 +44,17 @@ export function Testimonials({ id }: TestimonialsProps) {
             <CarouselContent>
               {testimonialsContent.testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
-                  <div
-                    className={cn(
-                      "rounded-2xl border p-6",
-                      "bg-card/50 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-                    )}
-                  >
-                    <blockquote className="space-y-4">
-                      <p className="text-muted-foreground">
-                        {testimonial.content}
-                      </p>
-                      <footer>
-                        <div className="space-y-1">
-                          <p className="text-sm font-medium">
-                            {testimonial.name}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {testimonial.role}
-                          </p>
-                        </div>
-                      </footer>
-                    </blockquote>
-                  </div>
+                  <Card className="flex h-[180px] flex-col justify-between p-5">
+                    <p className="line-clamp-3 text-muted-foreground">
+                      &ldquo;{testimonial.content}&rdquo;
+                    </p>
+                    <div>
+                      <div className="font-semibold">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </div>
+                    </div>
+                  </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -77,30 +63,71 @@ export function Testimonials({ id }: TestimonialsProps) {
           </Carousel>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="mt-16 hidden grid-cols-3 gap-4 sm:grid">
-          {testimonialsContent.testimonials.map((testimonial, index) => (
-            <InView key={index} delay={0.1 * (index + 1)}>
-              <div
-                className={cn(
-                  "rounded-2xl border p-6",
-                  "bg-card/50 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-                )}
-              >
-                <blockquote className="space-y-4">
-                  <p className="text-muted-foreground">{testimonial.content}</p>
-                  <footer>
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">
+        {/* Desktop Marquee */}
+        <div className="relative mt-16 hidden space-y-8 sm:block">
+          {/* First row */}
+          <div className="relative flex overflow-hidden">
+            {/* Gradient masks */}
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
+
+            {/* Marquee content */}
+            <div className="animate-marquee flex gap-8 [--duration:60s]">
+              {[
+                ...testimonialsContent.testimonials.slice(0, 3),
+                ...testimonialsContent.testimonials.slice(0, 3),
+                ...testimonialsContent.testimonials.slice(0, 3),
+                ...testimonialsContent.testimonials.slice(0, 3),
+                ...testimonialsContent.testimonials.slice(0, 3),
+              ].map((testimonial, index) => (
+                <InView key={index} delay={0.1 * (index % 3)}>
+                  <Card className="flex h-[180px] w-[350px] flex-col justify-between p-5">
+                    <p className="line-clamp-3 text-muted-foreground">
+                      &ldquo;{testimonial.content}&rdquo;
+                    </p>
+                    <div>
+                      <div className="font-semibold">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">
                         {testimonial.role}
-                      </p>
+                      </div>
                     </div>
-                  </footer>
-                </blockquote>
-              </div>
-            </InView>
-          ))}
+                  </Card>
+                </InView>
+              ))}
+            </div>
+          </div>
+
+          {/* Second row */}
+          <div className="relative flex overflow-hidden">
+            {/* Gradient masks */}
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
+
+            {/* Marquee content */}
+            <div className="animate-marquee-reverse flex gap-8 [--duration:65s]">
+              {[
+                ...testimonialsContent.testimonials.slice(3),
+                ...testimonialsContent.testimonials.slice(3),
+                ...testimonialsContent.testimonials.slice(3),
+                ...testimonialsContent.testimonials.slice(3),
+                ...testimonialsContent.testimonials.slice(3),
+              ].map((testimonial, index) => (
+                <InView key={index} delay={0.1 * (index % 2)}>
+                  <Card className="flex h-[180px] w-[350px] flex-col justify-between p-5">
+                    <p className="line-clamp-3 text-muted-foreground">
+                      &ldquo;{testimonial.content}&rdquo;
+                    </p>
+                    <div>
+                      <div className="font-semibold">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </div>
+                    </div>
+                  </Card>
+                </InView>
+              ))}
+            </div>
+          </div>
         </div>
       </InView>
     </section>
