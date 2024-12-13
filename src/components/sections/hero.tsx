@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-center px-4 pb-12 text-center"
+      className="relative flex min-h-[85vh] flex-col items-center justify-center px-4 pb-12 text-center"
     >
       <div className="flex max-w-5xl flex-col items-center space-y-8">
         <FadeIn delay={0.05}>

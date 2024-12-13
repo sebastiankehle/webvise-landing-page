@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
-import { TechSlider } from "@/components/sections/tech-slider";
+import { Tech } from "@/components/sections/tech";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TechSlider />
+      <Tech />
       <Metrics />
     </>
   );

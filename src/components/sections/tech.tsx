@@ -10,7 +10,7 @@ import {
 import { techContent } from "@/content/tech";
 import { cn } from "@/lib/utils";
 
-export function TechSlider() {
+export function Tech() {
   return (
     <section className="relative overflow-hidden border-y border-border/40 bg-background/50 py-16">
       <FadeIn className="space-y-8">
