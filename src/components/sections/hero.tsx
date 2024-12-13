@@ -3,7 +3,7 @@
 import { FadeIn } from "@/components/animations/fade-in";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { heroContent } from "@/content/home";
+import { heroContent } from "@/content/hero";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
