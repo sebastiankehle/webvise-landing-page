@@ -68,6 +68,9 @@ export function Metrics() {
                           {metricsContent.metrics.views.growth}
                         </span>
                       </div>
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        {metricsContent.description.views}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -96,6 +99,9 @@ export function Metrics() {
                           {metricsContent.metrics.clicks.growth}
                         </span>
                       </div>
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        {metricsContent.description.clicks}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>

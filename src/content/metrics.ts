@@ -10,9 +10,14 @@ export const metricsContent = {
     variant: "outline" as const,
   },
   headline: {
-    primary: "Rapid Growth Through Modern Tech",
+    primary: "Rapid Growth for Your Business",
     secondary:
-      "Our tech stack and development approach consistently delivers exceptional results for our clients.",
+      "Our products consistently outperform generic solutions and industry standards.",
+  },
+  description: {
+    views:
+      "We consistently achieve higher engagement rates, driving more organic traffic. ",
+    clicks: "Benefit from improved conversion rates and user interactions.",
   },
   metrics: {
     views: {
