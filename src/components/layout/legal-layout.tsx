@@ -2,15 +2,15 @@ import { InView } from "@/components/animations/in-view";
 
 interface LegalLayoutProps {
   title: string;
-  content: {
-    heading: string;
-    text: string[];
-  }[];
+  content: ReadonlyArray<{
+    readonly heading: string;
+    readonly text: ReadonlyArray<string>;
+  }>;
 }
 
 export function LegalLayout({ title, content }: LegalLayoutProps) {
   return (
-    <div className="container py-24">
+    <div className="container pb-24 pt-32">
       <InView className="mx-auto max-w-3xl">
         <div className="space-y-8">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">

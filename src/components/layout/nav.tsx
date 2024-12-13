@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/content/navigation";
 import { cn } from "@/lib/utils";
+import { usePathname, useRouter } from "next/navigation";
 
 interface NavProps {
   className?: string;
@@ -17,11 +18,20 @@ export function Nav({
   onNavClick,
   showGetStarted,
 }: NavProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const handleScroll = (href: string) => {
+    if (!isHomePage) {
+      // If not on homepage, navigate to homepage with hash
+      router.push(`/${href}`);
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      // Call onNavClick (which closes mobile menu) if provided
       if (onNavClick) {
         onNavClick();
       }
