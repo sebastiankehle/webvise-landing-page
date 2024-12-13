@@ -1,11 +1,11 @@
 "use client";
 
-import { FadeIn } from "@/components/animations/fade-in";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { heroContent } from "@/content/hero";
 import { cn } from "@/lib/utils";
 import { ArrowDown, ArrowRight } from "lucide-react";
+import { InView } from "../animations/in-view";
 
 export function Hero() {
   return (
@@ -14,12 +14,12 @@ export function Hero() {
       className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-4 pb-12 text-center"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="animate-float-slow absolute left-[15%] top-1/4 h-24 w-24 rounded-full bg-[hsl(var(--accent-1))] opacity-[0.15] blur-xl" />
-        <div className="animate-float absolute right-[15%] top-1/3 h-32 w-32 rounded-full bg-[hsl(var(--accent-2))] opacity-[0.15] blur-xl" />
+        <div className="absolute left-[15%] top-1/4 h-24 w-24 animate-float-slow rounded-full bg-[hsl(var(--accent-1))] opacity-[0.15] blur-xl" />
+        <div className="absolute right-[15%] top-1/3 h-32 w-32 animate-float rounded-full bg-[hsl(var(--accent-2))] opacity-[0.15] blur-xl" />
       </div>
 
       <div className="flex max-w-5xl flex-col items-center space-y-8">
-        <FadeIn delay={0.1}>
+        <InView delay={0.1}>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {heroContent.badges.map((badge, index) => (
               <Badge
@@ -42,19 +42,19 @@ export function Hero() {
               </Badge>
             ))}
           </div>
-        </FadeIn>
+        </InView>
 
         <div className="space-y-4">
-          <FadeIn delay={0.2}>
+          <InView delay={0.2}>
             <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
               <span>{heroContent.headline.primary}</span>
               <span className="mt-2 block pb-4">
                 {heroContent.headline.highlight}
               </span>
             </h1>
-          </FadeIn>
+          </InView>
 
-          <FadeIn delay={0.3}>
+          <InView delay={0.3}>
             <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
               {heroContent.description.primary}{" "}
               {heroContent.description.secondary}{" "}
@@ -62,10 +62,10 @@ export function Hero() {
                 {heroContent.description.emphasis}
               </span>
             </p>
-          </FadeIn>
+          </InView>
         </div>
 
-        <FadeIn delay={0.4}>
+        <InView delay={0.4}>
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3">
             <Button
               size="lg"
@@ -93,16 +93,16 @@ export function Hero() {
               {heroContent.cta.secondary.text}
             </Button>
           </div>
-        </FadeIn>
+        </InView>
       </div>
 
-      <FadeIn
+      <InView
         delay={0.5}
         className="absolute bottom-8 flex flex-col items-center gap-2"
       >
         <span className="text-sm text-muted-foreground">Scroll to explore</span>
         <ArrowDown className="h-4 w-4 animate-bounce text-muted-foreground" />
-      </FadeIn>
+      </InView>
     </section>
   );
 }

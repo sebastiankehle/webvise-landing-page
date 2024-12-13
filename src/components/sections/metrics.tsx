@@ -30,7 +30,7 @@ export function Metrics() {
       >
         <div className="bg-background">
           <div className="space-y-8">
-            <div className="space-y-6 text-center">
+            <InView className="space-y-6 text-center" delay={0.1}>
               <Badge
                 variant={metricsContent.badge.variant}
                 className="rounded-full px-4 py-1.5"
@@ -45,10 +45,13 @@ export function Metrics() {
                   {metricsContent.headline.secondary}
                 </p>
               </div>
-            </div>
+            </InView>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <div className="grid grid-cols-2 gap-4 sm:auto-rows-fr sm:grid-cols-1">
+              <InView
+                className="grid grid-cols-2 gap-4 sm:auto-rows-fr sm:grid-cols-1"
+                delay={0.2}
+              >
                 <Card
                   className={cn(
                     "cursor-pointer bg-background transition-colors",
@@ -111,9 +114,9 @@ export function Metrics() {
                     </div>
                   </CardContent>
                 </Card>
-              </div>
+              </InView>
 
-              <div className="sm:col-span-2">
+              <InView className="col-span-2" delay={0.3}>
                 <Card className="h-full bg-background">
                   <CardContent className="p-6">
                     <div className="h-[240px] w-full">
@@ -244,7 +247,7 @@ export function Metrics() {
                     </div>
                   </CardContent>
                 </Card>
-              </div>
+              </InView>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import { FadeIn } from "@/components/animations/fade-in";
 import {
   Tooltip,
   TooltipContent,
@@ -10,11 +9,12 @@ import {
 import { techContent } from "@/content/tech";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { InView } from "../animations/in-view";
 
 export function Tech() {
   return (
     <section className="relative overflow-hidden border-y border-border/40 bg-background/50 py-16">
-      <FadeIn className="space-y-8">
+      <InView className="space-y-8">
         <div className="relative flex w-full justify-center">
           <div className="absolute inset-y-0 left-0 z-10 w-48 bg-gradient-to-r from-background via-background/80 to-transparent" />
           <div className="absolute inset-y-0 right-0 z-10 w-48 bg-gradient-to-l from-background via-background/80 to-transparent" />
@@ -59,7 +59,7 @@ export function Tech() {
             </TooltipProvider>
           </div>
         </div>
-      </FadeIn>
+      </InView>
     </section>
   );
 }

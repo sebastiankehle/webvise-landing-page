@@ -8,13 +8,6 @@ import { InView } from "../animations/in-view";
 export function Benefits() {
   return (
     <section className="relative overflow-hidden px-4 py-24">
-      {/* Ambient background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute h-full w-full bg-[radial-gradient(ellipse_at_top,hsl(var(--accent-1))_0%,transparent_50%)] opacity-[0.05]" />
-        <div className="absolute h-full w-full bg-[radial-gradient(ellipse_at_bottom_right,hsl(var(--accent-2))_0%,transparent_50%)] opacity-[0.05]" />
-        <div className="absolute h-full w-full bg-[radial-gradient(ellipse_at_bottom_left,hsl(var(--accent-3))_0%,transparent_50%)] opacity-[0.05]" />
-      </div>
-
       <InView className="mx-auto max-w-6xl">
         <div className="space-y-6 text-center">
           <Badge
