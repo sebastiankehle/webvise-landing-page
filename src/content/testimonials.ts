@@ -28,7 +28,7 @@ export const testimonialsContent = {
         "Working with webvise was straightforward and efficient. They understood our vision and delivered a solution that helps us serve our customers better.",
     },
     {
-      name: "Alex Friebe",
+      name: "Sascha Frey",
       role: "CEO at petX",
       content:
         "Their expertise in both design and development helped us create a platform that our users love. The process was collaborative and the results exceeded expectations.",
