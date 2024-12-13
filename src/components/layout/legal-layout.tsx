@@ -10,7 +10,7 @@ interface LegalLayoutProps {
 
 export function LegalLayout({ title, content }: LegalLayoutProps) {
   return (
-    <div className="container pb-24 pt-32">
+    <div className="container px-4 pb-24 pt-32">
       <InView className="mx-auto max-w-3xl">
         <div className="space-y-8">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">

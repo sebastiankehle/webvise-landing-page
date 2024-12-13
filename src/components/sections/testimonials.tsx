@@ -39,27 +39,31 @@ export function Testimonials({ id }: TestimonialsProps) {
               align: "start",
               loop: true,
             }}
-            className="w-full"
+            className="relative w-full"
           >
-            <CarouselContent>
-              {testimonialsContent.testimonials.map((testimonial, index) => (
-                <CarouselItem key={index}>
-                  <Card className="flex h-[180px] flex-col justify-between p-5">
-                    <p className="line-clamp-3 text-muted-foreground">
-                      &ldquo;{testimonial.content}&rdquo;
-                    </p>
-                    <div>
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {testimonial.role}
+            <div className="relative">
+              <CarouselContent>
+                {testimonialsContent.testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="flex h-[180px] flex-col justify-between p-5">
+                      <p className="line-clamp-3 text-muted-foreground">
+                        &ldquo;{testimonial.content}&rdquo;
+                      </p>
+                      <div>
+                        <div className="font-semibold">{testimonial.name}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </div>
+            <div className="mt-4 flex w-full items-center justify-center gap-2">
+              <CarouselPrevious className="position-static h-8 w-8" />
+              <CarouselNext className="position-static h-8 w-8" />
+            </div>
           </Carousel>
         </div>
 
