@@ -19,7 +19,7 @@ export function Hero() {
       </div>
 
       <div className="flex max-w-5xl flex-col items-center space-y-8">
-        <FadeIn delay={0.05}>
+        <FadeIn delay={0.1}>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {heroContent.badges.map((badge, index) => (
               <Badge
@@ -45,8 +45,8 @@ export function Hero() {
         </FadeIn>
 
         <div className="space-y-4">
-          <FadeIn delay={0.1}>
-            <h1 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
+          <FadeIn delay={0.2}>
+            <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
               <span>{heroContent.headline.primary}</span>
               <span className="mt-2 block pb-4">
                 {heroContent.headline.highlight}
@@ -54,8 +54,8 @@ export function Hero() {
             </h1>
           </FadeIn>
 
-          <FadeIn delay={0.15}>
-            <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-[15px]">
+          <FadeIn delay={0.3}>
+            <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
               {heroContent.description.primary}{" "}
               {heroContent.description.secondary}{" "}
               <span className="font-medium text-foreground">
@@ -65,7 +65,7 @@ export function Hero() {
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.2}>
+        <FadeIn delay={0.4}>
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3">
             <Button
               size="lg"
@@ -96,10 +96,13 @@ export function Hero() {
         </FadeIn>
       </div>
 
-      <div className="absolute bottom-8 flex flex-col items-center gap-2">
+      <FadeIn
+        delay={0.5}
+        className="absolute bottom-8 flex flex-col items-center gap-2"
+      >
         <span className="text-sm text-muted-foreground">Scroll to explore</span>
         <ArrowDown className="h-4 w-4 animate-bounce text-muted-foreground" />
-      </div>
+      </FadeIn>
     </section>
   );
 }

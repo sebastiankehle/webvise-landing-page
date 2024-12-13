@@ -1,6 +1,6 @@
 "use client";
 
-import { FadeIn } from "@/components/animations/fade-in";
+import { InView } from "@/components/animations/in-view";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { metricsContent } from "@/content/metrics";
@@ -18,12 +18,18 @@ import {
 
 export function Metrics() {
   const [activeMetric, setActiveMetric] = useState<"views" | "clicks">("views");
+  const [showChart, setShowChart] = useState(false);
 
   return (
     <section className="px-4 py-24">
-      <div className="mx-auto max-w-5xl">
+      <InView
+        className="mx-auto max-w-5xl"
+        onInView={() => {
+          setTimeout(() => setShowChart(true), 700);
+        }}
+      >
         <div className="bg-background">
-          <FadeIn className="space-y-8">
+          <div className="space-y-8">
             <div className="space-y-6 text-center">
               <Badge
                 variant={metricsContent.badge.variant}
@@ -213,7 +219,8 @@ export function Metrics() {
                             strokeWidth={2}
                             activeDot={{ r: 4 }}
                             dot={false}
-                            isAnimationActive={true}
+                            isAnimationActive={showChart}
+                            animationDuration={1500}
                             style={{
                               opacity: activeMetric === "views" ? 1 : 0.2,
                             }}
@@ -226,7 +233,8 @@ export function Metrics() {
                             strokeWidth={2}
                             activeDot={{ r: 4 }}
                             dot={false}
-                            isAnimationActive={true}
+                            isAnimationActive={showChart}
+                            animationDuration={1500}
                             style={{
                               opacity: activeMetric === "clicks" ? 1 : 0.2,
                             }}
@@ -238,9 +246,9 @@ export function Metrics() {
                 </Card>
               </div>
             </div>
-          </FadeIn>
+          </div>
         </div>
-      </div>
+      </InView>
     </section>
   );
 }
