@@ -10,34 +10,46 @@ export const testimonialsContent = {
   },
   testimonials: [
     {
-      name: "Sarah Johnson",
-      role: "CTO at TechFlow",
+      name: "Nick Liverman",
+      role: "CEO at Old World Labs",
       content:
-        "Working with webvise has been transformative for our business. Their attention to detail and technical expertise is unmatched.",
+        "webvise helped us modernize our web presence while maintaining our brand's heritage. Their technical expertise and understanding of our needs made the process smooth.",
     },
     {
-      name: "Michael Chen",
-      role: "Founder at InnovateLab",
+      name: "Haidar Hammoud",
+      role: "Founder at envi",
       content:
-        "The team's ability to translate complex requirements into elegant solutions is remarkable. They've exceeded our expectations.",
+        "The team delivered a clean, performant platform that perfectly aligns with our sustainability goals. Their attention to detail and commitment to quality is evident.",
     },
     {
-      name: "Emma Davis",
-      role: "Product Lead at ScaleUp",
+      name: "Lennard Brauer",
+      role: "Co-founder at cascady",
       content:
-        "Their process is streamlined and efficient. The results speak for themselves - our metrics have improved significantly.",
+        "Working with webvise was straightforward and efficient. They understood our vision and delivered a solution that helps us serve our customers better.",
     },
     {
-      name: "Alex Rivera",
-      role: "CEO at NextGen",
+      name: "Alex Friebe",
+      role: "CEO at petX",
       content:
-        "The AI integration capabilities they brought to our platform have given us a serious competitive advantage.",
+        "Their expertise in both design and development helped us create a platform that our users love. The process was collaborative and the results exceeded expectations.",
     },
     {
-      name: "Lisa Zhang",
-      role: "Director at FutureFirst",
+      name: "Felix Rautenberg",
+      role: "Founder at historicx",
       content:
-        "Exceptional service and technical prowess. They're not just vendors, they're true partners in our success.",
+        "webvise brought our historical data visualization concept to life with modern tech. Their technical knowledge and problem-solving abilities were invaluable.",
+    },
+    {
+      name: "Lisa Kehle",
+      role: "Director at myskin",
+      content:
+        "The team's approach to our e-commerce platform was thorough and thoughtful. They delivered a solution that's both beautiful and functional.",
+    },
+    {
+      name: "Alex Kersten",
+      role: "Founder at brofit",
+      content:
+        "webvise understood our need for a fast, reliable platform for our fitness community. Their implementation was clean and scales well with our growing user base.",
     },
   ],
 } as const;
