@@ -1,9 +1,10 @@
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { MobileMenuProvider } from "@/providers/mobile-menu-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
-import { Header } from "@/components/layout/header";
-import { MobileMenuProvider } from "@/providers/mobile-menu-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={`${inter.className} flex min-h-screen flex-col antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -44,7 +47,8 @@ export default function RootLayout({
         >
           <MobileMenuProvider>
             <Header />
-            <main className="pt-24">{children}</main>
+            <main className="flex-1">{children}</main>
+            <Footer />
           </MobileMenuProvider>
         </ThemeProvider>
       </body>
