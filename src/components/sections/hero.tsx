@@ -6,6 +6,7 @@ import { heroContent } from "@/content/hero";
 import { cn } from "@/lib/utils";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { InView } from "../animations/in-view";
+import Particles from "../ui/particles";
 
 interface HeroProps {
   id?: string;
@@ -17,6 +18,18 @@ export function Hero({ id }: HeroProps) {
       id={id}
       className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-4 pb-12 text-center"
     >
+      <InView delay={0.1}>
+        <div className="pointer-events-none absolute inset-0">
+          <Particles
+            className="absolute inset-0"
+            quantity={100}
+            ease={80}
+            staticity={50}
+            size={0.4}
+          />
+        </div>
+      </InView>
+
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[15%] top-1/4 h-24 w-24 animate-float-slow rounded-full bg-[hsl(var(--accent-1))] opacity-[0.15] blur-xl" />
         <div className="absolute right-[15%] top-1/3 h-32 w-32 animate-float rounded-full bg-[hsl(var(--accent-2))] opacity-[0.15] blur-xl" />
@@ -49,7 +62,7 @@ export function Hero({ id }: HeroProps) {
         </InView>
 
         <div className="space-y-4">
-          <InView delay={0.2}>
+          <InView delay={0.15}>
             <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
               <span>{heroContent.headline.primary}</span>
               <span className="mt-2 block pb-4">
@@ -58,7 +71,7 @@ export function Hero({ id }: HeroProps) {
             </h1>
           </InView>
 
-          <InView delay={0.3}>
+          <InView delay={0.15}>
             <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
               {heroContent.description.primary}{" "}
               {heroContent.description.secondary}{" "}
@@ -69,7 +82,7 @@ export function Hero({ id }: HeroProps) {
           </InView>
         </div>
 
-        <InView delay={0.4}>
+        <InView delay={0.2}>
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3">
             <Button
               size="lg"
@@ -101,7 +114,7 @@ export function Hero({ id }: HeroProps) {
       </div>
 
       <InView
-        delay={0.5}
+        delay={0.2}
         className="absolute bottom-8 flex flex-col items-center gap-2"
       >
         <span className="text-sm text-muted-foreground">Scroll to explore</span>
