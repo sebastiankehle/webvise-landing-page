@@ -26,7 +26,7 @@ export function Hero({ id }: HeroProps) {
       className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-4 pb-12 text-center"
     >
       <InView delay={0.1}>
-        <div className="pointer-events-none absolute inset-0">
+        <div className="pointer-events-none absolute inset-0 hidden sm:block">
           <Particles
             className="absolute inset-0"
             quantity={100}
