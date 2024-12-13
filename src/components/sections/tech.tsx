@@ -11,9 +11,16 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { InView } from "../animations/in-view";
 
-export function Tech() {
+interface TechProps {
+  id?: string;
+}
+
+export function Tech({ id }: TechProps) {
   return (
-    <section className="relative overflow-hidden border-y border-border/40 bg-background/50 py-16">
+    <section
+      id={id}
+      className="relative overflow-hidden border-y border-border/40 bg-background/50 py-16"
+    >
       <InView className="space-y-8">
         <div className="relative flex w-full justify-center">
           <div className="absolute inset-y-0 left-0 z-10 w-48 bg-gradient-to-r from-background via-background/80 to-transparent" />

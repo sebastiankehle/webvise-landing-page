@@ -7,7 +7,11 @@ import { solutionsContent } from "@/content/solutions";
 import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
-export function Solutions() {
+interface SolutionsProps {
+  id?: string;
+}
+
+export function Solutions({ id }: SolutionsProps) {
   const getAccentColor = (index: number) => {
     switch (index) {
       case 0:
@@ -35,7 +39,7 @@ export function Solutions() {
   };
 
   return (
-    <section className="relative px-4 py-24">
+    <section id={id} className="relative px-4 py-24">
       <InView className="mx-auto max-w-7xl">
         <div className="space-y-6 text-center">
           <Badge variant="outline" className="rounded-full px-4 py-1.5">

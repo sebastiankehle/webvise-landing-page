@@ -5,9 +5,13 @@ import { benefitsContent } from "@/content/benefits";
 import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
-export function Benefits() {
+interface BenefitsProps {
+  id?: string;
+}
+
+export function Benefits({ id }: BenefitsProps) {
   return (
-    <section className="relative overflow-hidden px-4 py-24">
+    <section id={id} className="relative px-4 py-24">
       <InView className="mx-auto max-w-6xl">
         <div className="space-y-6 text-center">
           <Badge

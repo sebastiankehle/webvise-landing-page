@@ -7,10 +7,14 @@ import { cn } from "@/lib/utils";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { InView } from "../animations/in-view";
 
-export function Hero() {
+interface HeroProps {
+  id?: string;
+}
+
+export function Hero({ id }: HeroProps) {
   return (
     <section
-      id="hero"
+      id={id}
       className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-4 pb-12 text-center"
     >
       <div className="pointer-events-none absolute inset-0">

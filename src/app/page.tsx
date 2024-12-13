@@ -25,13 +25,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Tech />
-      <Benefits />
-      <Services />
-      <Process />
-      <Metrics />
-      <Solutions />
+      <Hero id="home" />
+      <Tech id="tech" />
+      <Benefits id="benefits" />
+      <Metrics id="metrics" />
+      <Services id="services" />
+      <Process id="process" />
+      <Solutions id="solutions" />
     </>
   );
 }

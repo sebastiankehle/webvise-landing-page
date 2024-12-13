@@ -6,7 +6,11 @@ import { processContent } from "@/content/process";
 import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
-export function Process() {
+interface ProcessProps {
+  id?: string;
+}
+
+export function Process({ id }: ProcessProps) {
   // Helper function to get accent color based on index
   const getAccentColor = (index: number) => {
     switch (index % 3) {
@@ -36,7 +40,7 @@ export function Process() {
   };
 
   return (
-    <section className="relative px-4 py-24">
+    <section id={id} className="relative px-4 py-24">
       <InView className="mx-auto max-w-7xl">
         <div className="space-y-6 text-center">
           <Badge variant="outline" className="rounded-full px-4 py-1.5">

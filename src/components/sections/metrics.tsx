@@ -16,12 +16,16 @@ import {
   YAxis,
 } from "recharts";
 
-export function Metrics() {
+interface MetricsProps {
+  id?: string;
+}
+
+export function Metrics({ id }: MetricsProps) {
   const [activeMetric, setActiveMetric] = useState<"views" | "clicks">("views");
   const [showChart, setShowChart] = useState(false);
 
   return (
-    <section className="px-4 py-24">
+    <section id={id} className="relative px-4 py-24">
       <InView
         className="mx-auto max-w-5xl"
         onInView={() => {

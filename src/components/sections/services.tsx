@@ -5,9 +5,13 @@ import { servicesContent } from "@/content/services";
 import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
-export function Services() {
+interface ServicesProps {
+  id?: string;
+}
+
+export function Services({ id }: ServicesProps) {
   return (
-    <section className="relative overflow-hidden px-4 py-16">
+    <section id={id} className="relative px-4 py-24">
       <InView className="mx-auto max-w-5xl space-y-8">
         <div className="space-y-6 text-center">
           <Badge
