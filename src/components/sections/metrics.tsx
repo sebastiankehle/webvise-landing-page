@@ -70,12 +70,15 @@ export function Metrics({ id }: MetricsProps) {
                       <p className="text-sm text-muted-foreground">
                         {metricsContent.metrics.views.label}
                       </p>
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                         <p className="text-2xl font-bold">
                           {metricsContent.metrics.views.value.toLocaleString()}
                         </p>
                         <span
-                          className="text-sm font-medium"
+                          className={cn(
+                            "inline-flex w-fit rounded-md px-2 py-0.5 text-sm font-medium",
+                            "bg-[hsl(var(--accent-1))]/10"
+                          )}
                           style={{ color: metricsContent.metrics.views.color }}
                         >
                           {metricsContent.metrics.views.growth}
@@ -101,12 +104,15 @@ export function Metrics({ id }: MetricsProps) {
                       <p className="text-sm text-muted-foreground">
                         {metricsContent.metrics.clicks.label}
                       </p>
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                         <p className="text-2xl font-bold">
                           {metricsContent.metrics.clicks.value.toLocaleString()}
                         </p>
                         <span
-                          className="text-sm font-medium"
+                          className={cn(
+                            "inline-flex w-fit rounded-md px-2 py-0.5 text-sm font-medium",
+                            "bg-[hsl(var(--accent-2))]/10"
+                          )}
                           style={{ color: metricsContent.metrics.clicks.color }}
                         >
                           {metricsContent.metrics.clicks.growth}
