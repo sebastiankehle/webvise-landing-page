@@ -74,13 +74,14 @@ export function Services({ id }: ServicesProps) {
                   </h3>
                   <p className="text-muted-foreground">{service.description}</p>
 
-                  <ul className="grid grid-cols-2 gap-2 pt-4">
+                  <ul className="grid gap-2 pt-4 sm:grid-cols-2">
                     {service.features.map((feature) => (
                       <li
                         key={feature}
                         className={cn(
                           "rounded-full border px-3 py-1.5 text-sm",
-                          "text-muted-foreground/80"
+                          "text-muted-foreground/80",
+                          "flex items-center justify-center text-center"
                         )}
                       >
                         {feature}
