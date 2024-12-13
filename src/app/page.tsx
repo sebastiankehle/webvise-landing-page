@@ -1,3 +1,4 @@
+import { Benefits } from "@/components/sections/benefits";
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
 import { Services } from "@/components/sections/services";
@@ -26,6 +27,7 @@ export default function Home() {
       <Tech />
       <Services />
       <Metrics />
+      <Benefits />
     </>
   );
 }
