@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { benefitsContent } from "@/content/benefits";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import { InView } from "../animations/in-view";
 
 interface BenefitsProps {
@@ -28,61 +29,83 @@ export function Benefits({ id }: BenefitsProps) {
           </p>
         </div>
 
-        <div className="mt-24 grid gap-8 lg:grid-cols-3">
-          {benefitsContent.benefits.map((benefit, index) => (
-            <InView
-              key={benefit.title}
-              delay={0.15 * ((index + 1) % 3) + 0.1}
-              className="group"
-            >
-              <div className="relative h-full space-y-6 rounded-3xl border bg-card p-8 transition-all duration-300 hover:border-foreground/20">
-                {/* Icon */}
-                <div
-                  className={cn(
-                    "flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110",
-                    "bg-background"
-                  )}
-                  style={{
-                    boxShadow: `inset 0 0 0 1px ${benefit.color}20`,
-                  }}
+        <div className="mt-24 grid gap-6 lg:grid-cols-3">
+          {benefitsContent.benefits.map((benefit, index) => {
+            return (
+              <InView
+                key={benefit.title}
+                delay={0.15 * ((index + 1) % 3) + 0.1}
+                className="group"
+              >
+                <motion.div
+                  className="relative h-full rounded-3xl border bg-card p-8 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <benefit.icon
-                    className="h-7 w-7"
-                    style={{ color: benefit.color }}
-                    strokeWidth={1.5}
+                  {/* Gradient Border */}
+                  <div
+                    className="absolute inset-x-0 -top-px h-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{
+                      background: `linear-gradient(90deg, transparent, ${benefit.color}, transparent)`,
+                    }}
                   />
-                </div>
 
-                {/* Content */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold tracking-tight">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-muted-foreground">{benefit.description}</p>
-                </div>
-
-                {/* Metrics */}
-                <div className="flex flex-wrap gap-2">
-                  {benefit.metrics.map((metric) => (
+                  {/* Large Metric Display */}
+                  <div className="mb-8 flex items-baseline justify-between">
                     <div
-                      key={metric}
                       className={cn(
-                        "rounded-full px-4 py-1.5 text-sm",
-                        "border transition-colors duration-300",
-                        "group-hover:border-border"
+                        "flex h-14 w-14 items-center justify-center rounded-2xl",
+                        "bg-background transition-transform duration-500 group-hover:scale-110"
                       )}
                       style={{
-                        borderColor: `${benefit.color}10`,
-                        background: `${benefit.color}05`,
+                        boxShadow: `inset 0 0 0 1px ${benefit.color}20`,
                       }}
                     >
-                      {metric}
+                      <benefit.icon
+                        className="h-7 w-7"
+                        style={{ color: benefit.color }}
+                        strokeWidth={1.5}
+                      />
                     </div>
-                  ))}
-                </div>
-              </div>
-            </InView>
-          ))}
+                    <div className="text-right">
+                      <div className="text-3xl font-bold tracking-tight text-foreground">
+                        {benefit.stat.value}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {benefit.stat.label}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold tracking-tight">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {benefit.description}
+                    </p>
+                  </div>
+
+                  {/* Features */}
+                  <div className="mt-8 space-y-2">
+                    {benefit.metrics.map((feature) => (
+                      <div
+                        key={feature}
+                        className="flex items-center gap-2 text-sm"
+                      >
+                        <div
+                          className="h-1 w-1 rounded-full"
+                          style={{ background: benefit.color }}
+                        />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </InView>
+            );
+          })}
         </div>
       </InView>
     </section>

@@ -6,27 +6,28 @@ export interface MetricDataPoint {
 
 export const metricsContent = {
   badge: {
-    text: "Performance Metrics",
-    variant: "outline" as const,
+    text: "Growth Metrics",
+    variant: "outline",
   },
   headline: {
-    primary: "Rapid Growth for Your Business",
+    primary: "Engineered for Scale",
     secondary:
-      "Our products consistently outperform generic solutions and industry standards.",
+      "Our solutions consistently outperform industry standards, driving exponential growth for our clients.",
   },
   description: {
-    views: "Achieve higher engagement rates and drive more organic traffic.",
-    clicks: "Benefit from improved conversion rates and user interactions.",
+    views: "From zero to millions: Watch your user base grow exponentially.",
+    clicks:
+      "Turn visitors into customers with conversion-optimized experiences.",
   },
   metrics: {
     views: {
-      label: "Views",
+      label: "User Growth",
       value: 24863,
       growth: "+1156%",
       color: "hsl(var(--accent-1))",
     },
     clicks: {
-      label: "Clicks",
+      label: "Conversion Rate",
       value: 11842,
       growth: "+1003%",
       color: "hsl(var(--accent-3))",

@@ -2,38 +2,62 @@ import { Gauge, Lightbulb, Target } from "lucide-react";
 
 export const benefitsContent = {
   badge: {
-    text: "Why Choose Us",
-    variant: "outline" as const,
+    text: "The Advantage",
+    variant: "outline",
   },
   headline: {
-    primary: "Solutions That Drive Results",
+    primary: "Built for Performance",
     secondary:
-      "We transform challenges into opportunities, delivering measurable impact for your business.",
+      "Leverage cutting-edge technology to give your business the competitive edge it deserves.",
   },
   benefits: [
     {
-      title: "Faster Time to Market",
+      title: "Speed to Market",
       description:
-        "Launch your products faster with our streamlined development process and battle-tested tech stack.",
+        "Launch your digital product in weeks, not months. Our streamlined process and battle-tested stack ensures rapid delivery without compromising quality.",
       icon: Gauge,
-      metrics: ["40% Faster Delivery", "Agile Sprints", "Weekly Updates"],
+      metrics: [
+        "6-Week Launch Timeline",
+        "Weekly Feature Releases",
+        "Instant Iterations",
+      ],
       color: "hsl(var(--accent-1))",
+      stat: {
+        value: "4-6",
+        label: "Week Delivery",
+      },
     },
     {
-      title: "Innovation First",
+      title: "Technical Excellence",
       description:
-        "Stay ahead with cutting-edge solutions that leverage the latest in AI and web technologies.",
+        "Built on Next.js, React, and TypeScript – the same tech stack powering industry leaders. Your product is engineered for reliability and scale.",
       icon: Lightbulb,
-      metrics: ["AI Integration", "Modern Stack", "Future-Proof"],
+      metrics: [
+        "Enterprise-Grade Stack",
+        "Quality Assurance",
+        "Future-Proof Code",
+      ],
       color: "hsl(var(--accent-2))",
+      stat: {
+        value: "100%",
+        label: "Type-Safe",
+      },
     },
     {
-      title: "Result Driven",
+      title: "Growth Driven",
       description:
-        "Focus on metrics that matter with solutions designed to maximize ROI and user engagement.",
+        "Every feature is optimized for performance and conversion. Get a solution that not only looks great but drives real business results.",
       icon: Target,
-      metrics: ["Conversion Focus", "Data-Driven", "Scalable"],
+      metrics: [
+        "Sub-Second Loading",
+        "Mobile-First Design",
+        "Built-in Analytics",
+      ],
       color: "hsl(var(--accent-3))",
+      stat: {
+        value: "3x",
+        label: "Faster Sites",
+      },
     },
   ],
 } as const;

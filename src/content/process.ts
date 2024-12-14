@@ -1,48 +1,48 @@
-import { Code2, HeartHandshake, Lightbulb, Puzzle, Rocket } from "lucide-react";
+import { Code2, Lightbulb, Puzzle, Rocket, Target } from "lucide-react";
 
 export const processContent = {
   badge: {
-    text: "Process",
-    variant: "outline" as const,
+    text: "Our Process",
+    variant: "outline",
   },
   headline: {
-    primary: "From Concept to Launch",
+    primary: "From Idea to Reality",
     secondary:
-      "Our proven development process ensures successful project delivery",
+      "A proven development process that turns your vision into a successful digital product.",
   },
   steps: [
     {
-      title: "Discovery",
+      title: "Ideation",
       description:
-        "We dive deep into your requirements, goals and vision to create the perfect roadmap.",
+        "We start by understanding your vision, goals, and requirements. Together, we shape the perfect solution for your business needs.",
       icon: Lightbulb,
       color: "var(--accent-1)",
     },
     {
       title: "Design",
       description:
-        "Crafting the architecture and user experience that brings your vision to life.",
+        "Transform ideas into intuitive interfaces. We create user-centric designs that look great and drive engagement.",
       icon: Puzzle,
       color: "var(--accent-2)",
     },
     {
       title: "Development",
       description:
-        "Building your solution using cutting-edge technologies and best practices.",
+        "Using modern tech stack and best practices, we build your solution with clean, maintainable, and scalable code.",
       icon: Code2,
       color: "var(--accent-3)",
     },
     {
       title: "Testing",
       description:
-        "Rigorous testing and performance optimization for a flawless experience.",
-      icon: HeartHandshake,
+        "Rigorous testing across devices and scenarios ensures your product works flawlessly for every user.",
+      icon: Target,
       color: "var(--accent-4)",
     },
     {
       title: "Launch",
       description:
-        "Seamless deployment and monitoring to ensure everything runs perfectly.",
+        "Smooth deployment and handover. We ensure your product goes live successfully and you're ready to grow.",
       icon: Rocket,
       color: "var(--accent-5)",
     },

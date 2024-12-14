@@ -13,32 +13,34 @@ export type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export const contactContent = {
   badge: {
-    label: "Get in touch",
+    label: "Get Started",
   },
   headline: {
-    title: "Let's Build Something Great Together",
+    title: "Let's Build Something Great",
     description:
-      "Tell us about your project and we'll get back to you within 24 hours.",
+      "Tell me about your project, and I'll help you bring it to life with modern technology.",
   },
   form: {
     types: [
-      { label: "Get a Quote", value: "quote" },
-      { label: "General Inquiry", value: "general" },
-      { label: "Support", value: "support" },
+      { label: "Get Quote", value: "quote" },
+      { label: "Technical Questions", value: "general" },
+      { label: "Project Support", value: "support" },
     ],
     budgets: [
-      { label: "< €5,000", value: "<5k" },
-      { label: "€5,000 - €10,000", value: "5k-10k" },
-      { label: "€10,000 - €25,000", value: "10k-25k" },
-      { label: "€25,000 - €50,000", value: "25k-50k" },
-      { label: "> €50,000", value: ">50k" },
+      { label: "Basic Website < €5k", value: "<5k" },
+      { label: "Custom Website €5k-€10k", value: "5k-10k" },
+      { label: "Web Application €10k-€25k", value: "10k-25k" },
+      { label: "AI Integration €25k-€50k", value: "25k-50k" },
+      { label: "Custom Solution > €50k", value: ">50k" },
     ],
-    sending: "Sending...",
-    success: "Message sent successfully!",
-    successDescription: "We'll get back to you within 24 hours.",
-    error: "An error occurred while sending the message.",
-    errorDescription: "Please try again later or contact us directly.",
-    send: "Send Message",
+    sending: "Initiating Contact...",
+    success: "Connection Established!",
+    successDescription:
+      "Our team will reach out within 24 hours with a strategic plan.",
+    error: "Connection Failed",
+    errorDescription:
+      "Please try again or reach out directly at contact@webvise.io",
+    send: "Start Your Growth Journey",
   },
 } as const;
 
@@ -49,19 +51,19 @@ export const faqContent = {
       value: "general",
       questions: [
         {
-          question: "How long does a typical project take?",
+          question: "How long does a project take?",
           answer:
-            "Most projects are completed within 4-12 weeks, depending on scope and complexity. We'll provide a detailed timeline during our initial consultation.",
+            "Most websites take 4-6 weeks, and web applications 8-12 weeks. Timeline varies based on complexity and features needed.",
         },
         {
-          question: "What is your development process?",
+          question: "What's your development process?",
           answer:
-            "We follow an agile methodology with weekly updates. This includes planning, design, development, testing, and deployment phases with regular client feedback.",
+            "I follow an agile approach with weekly updates and regular deployments. You'll always know the project status and can provide feedback throughout.",
         },
         {
-          question: "Do you provide ongoing support?",
+          question: "Do you provide support after launch?",
           answer:
-            "Yes, we offer various maintenance and support packages to ensure your solution stays up-to-date and performs optimally.",
+            "Yes, I offer maintenance and support packages to keep your solution running smoothly and help with any updates needed.",
         },
       ],
     },
@@ -70,40 +72,40 @@ export const faqContent = {
       value: "technical",
       questions: [
         {
-          question: "What technologies do you use?",
+          question: "What's your tech stack?",
           answer:
-            "We specialize in modern web technologies including React, Next.js, TypeScript, and Node.js. We also integrate AI solutions using various frameworks.",
+            "We use enterprise-grade technologies: Next.js 14, TypeScript, Node.js, and various AI frameworks. Our stack is chosen for performance, scalability, and future-proof architecture.",
         },
         {
-          question: "Can you handle both frontend and backend?",
+          question: "How do you handle scaling?",
           answer:
-            "Yes, we provide full-stack development services, ensuring seamless integration between frontend and backend systems.",
+            "Our architecture is built for scale from day one. We use microservices, serverless computing, and advanced caching strategies to handle millions of users efficiently.",
         },
         {
-          question: "Do you work with existing systems?",
+          question: "Can you integrate with existing systems?",
           answer:
-            "Yes, we can integrate with your existing systems or build new solutions from scratch, depending on your needs.",
+            "Absolutely. We specialize in seamless integrations, whether it's legacy systems, third-party APIs, or custom enterprise solutions.",
         },
       ],
     },
     {
-      label: "Commercial",
+      label: "Investment",
       value: "commercial",
       questions: [
         {
-          question: "What are your payment terms?",
+          question: "What's your pricing model?",
           answer:
-            "We typically work with a 40% upfront deposit and remaining payments tied to project milestones. All terms are clearly outlined in our proposal.",
+            "We offer strategic investment tiers based on your growth stage. Each tier is designed to maximize ROI with clear deliverables and success metrics.",
         },
         {
-          question: "Do you offer fixed-price projects?",
+          question: "Do you offer fixed-price solutions?",
           answer:
-            "Yes, we offer both fixed-price and time-and-materials pricing models, depending on project requirements and scope clarity.",
+            "Yes, we provide both fixed-price packages and custom engagements. Our pricing is transparent with no hidden costs, tied to clear business outcomes.",
         },
         {
-          question: "What's included in the price?",
+          question: "What's included in the investment?",
           answer:
-            "Our prices include planning, development, testing, deployment, and initial support. We'll provide a detailed breakdown in our proposal.",
+            "Everything needed for success: strategy, development, testing, deployment, analytics, and initial growth support. Each package is designed for specific scaling milestones.",
         },
       ],
     },

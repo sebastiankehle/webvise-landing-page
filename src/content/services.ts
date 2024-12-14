@@ -2,60 +2,60 @@ import { Bot, Code2, Layout, Smartphone } from "lucide-react";
 
 export const servicesContent = {
   badge: {
-    text: "Our Services",
-    variant: "outline" as const,
+    text: "Services",
+    variant: "outline",
   },
   headline: {
-    primary: "Full-Stack Development Services",
-    secondary: "End-to-end solutions for your digital presence",
+    primary: "Full-Stack Excellence",
+    secondary: "Modern solutions engineered for growth.",
   },
   services: [
     {
-      title: "Web Design",
+      title: "Web Development",
       description:
-        "Crafting beautiful, responsive interfaces that captivate users and drive engagement.",
-      icon: Layout,
+        "High-performance web applications built with Next.js and React. Modern, scalable, and optimized for growth.",
+      icon: Code2,
       features: [
-        "UI/UX Design",
-        "Responsive Layouts",
-        "Brand Identity",
-        "Design Systems",
+        "Next.js & React",
+        "TypeScript & APIs",
+        "Performance First",
+        "Cloud Deployment",
       ],
     },
     {
-      title: "Web Development",
+      title: "Web Design",
       description:
-        "Building robust, scalable web applications with modern technologies.",
-      icon: Code2,
+        "Professional websites with modern CMS. Perfect for marketing sites, blogs, and business presence.",
+      icon: Layout,
       features: [
-        "Frontend Development",
-        "Backend Systems",
-        "API Integration",
-        "Performance Optimization",
+        "Webflow & WordPress",
+        "Custom Design",
+        "SEO Optimized",
+        "Content Management",
       ],
     },
     {
       title: "App Development",
       description:
-        "Creating native and cross-platform mobile experiences that users love.",
+        "Cross-platform mobile applications with Flutter. Native performance with single codebase efficiency.",
       icon: Smartphone,
       features: [
+        "Flutter & Dart",
         "iOS & Android",
-        "Cross-Platform",
-        "Native Apps",
-        "Progressive Web Apps",
+        "Native Features",
+        "App Store Ready",
       ],
     },
     {
       title: "AI Integration",
       description:
-        "Leveraging cutting-edge AI technologies to create intelligent solutions.",
+        "Enhance your digital products with AI capabilities. From chatbots to automation, make your product smarter.",
       icon: Bot,
       features: [
-        "ChatGPT Integration",
-        "Custom AI Models",
-        "Machine Learning",
-        "Automation",
+        "Agent Integration",
+        "Custom AI Features",
+        "Process Automation",
+        "Smart Analytics",
       ],
     },
   ],
