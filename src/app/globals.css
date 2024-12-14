@@ -148,3 +148,19 @@ body {
 .animate-marquee-reverse {
   animation: marquee-reverse var(--duration) linear infinite;
 }
+
+@keyframes swipe-right {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.animate-swipe-right {
+  animation: swipe-right 1.5s ease-in-out infinite;
+}

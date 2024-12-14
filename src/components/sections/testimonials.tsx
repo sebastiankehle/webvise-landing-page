@@ -8,9 +8,11 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { testimonialsContent } from "@/content/testimonials";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 import { InView } from "../animations/in-view";
 
 interface TestimonialsProps {
@@ -18,6 +20,22 @@ interface TestimonialsProps {
 }
 
 export function Testimonials({ id }: TestimonialsProps) {
+  const [api, setApi] = useState<CarouselApi>();
+  const allTestimonials = [
+    ...testimonialsContent.upperRow,
+    ...testimonialsContent.lowerRow,
+  ];
+
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section id={id} className="relative overflow-x-hidden px-4 py-24">
       <InView className="mx-auto max-w-7xl">
@@ -36,6 +54,7 @@ export function Testimonials({ id }: TestimonialsProps) {
         {/* Mobile Carousel */}
         <div className="mt-16 sm:hidden">
           <Carousel
+            setApi={setApi}
             opts={{
               align: "start",
               loop: true,
@@ -44,7 +63,7 @@ export function Testimonials({ id }: TestimonialsProps) {
           >
             <div className="relative">
               <CarouselContent>
-                {testimonialsContent.testimonials.map((testimonial, index) => (
+                {allTestimonials.map((testimonial, index) => (
                   <CarouselItem key={index}>
                     <Card className="flex h-[180px] flex-col justify-between p-5">
                       <p className="line-clamp-3 text-muted-foreground">
@@ -61,9 +80,21 @@ export function Testimonials({ id }: TestimonialsProps) {
                 ))}
               </CarouselContent>
             </div>
-            <div className="mt-4 flex w-full items-center justify-center gap-2">
-              <CarouselPrevious className="position-static h-8 w-8" />
-              <CarouselNext className="position-static h-8 w-8" />
+
+            {/* Updated Navigation */}
+            <div className="mt-6 flex flex-col items-center gap-4">
+              <div className="flex items-center gap-2">
+                <CarouselPrevious className="position-static h-8 w-8" />
+                <CarouselNext className="position-static h-8 w-8" />
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex h-8 items-center gap-1">
+                  <div className="animate-swipe-right h-0.5 w-3 bg-muted-foreground/50" />
+                  <div className="animate-swipe-right h-0.5 w-3 bg-muted-foreground/50 [animation-delay:150ms]" />
+                  <div className="animate-swipe-right h-0.5 w-3 bg-muted-foreground/50 [animation-delay:300ms]" />
+                </div>
+                <span>Swipe to see more</span>
+              </div>
             </div>
           </Carousel>
         </div>
@@ -79,17 +110,17 @@ export function Testimonials({ id }: TestimonialsProps) {
             {/* First row marquee */}
             <div className="animate-marquee flex gap-8 [--duration:90s]">
               {[
-                ...testimonialsContent.testimonials.slice(0, 3),
-                ...testimonialsContent.testimonials.slice(0, 3),
-                ...testimonialsContent.testimonials.slice(0, 3),
-                ...testimonialsContent.testimonials.slice(0, 3),
-                ...testimonialsContent.testimonials.slice(0, 3),
+                ...testimonialsContent.upperRow,
+                ...testimonialsContent.upperRow,
+                ...testimonialsContent.upperRow,
+                ...testimonialsContent.upperRow,
+                ...testimonialsContent.upperRow,
               ].map((testimonial, index) => (
                 <InView key={index} delay={0.1 * (index % 3)}>
                   <Card
                     className={cn(
                       "flex h-[180px] w-[350px] flex-col justify-between p-5",
-                      index % 3 === 1 &&
+                      index % 4 === 1 &&
                         "border-[hsl(var(--accent-1))] shadow-sm"
                     )}
                   >
@@ -117,11 +148,11 @@ export function Testimonials({ id }: TestimonialsProps) {
             {/* Second row marquee */}
             <div className="animate-marquee-reverse flex gap-8 [--duration:95s]">
               {[
-                ...testimonialsContent.testimonials.slice(3),
-                ...testimonialsContent.testimonials.slice(3),
-                ...testimonialsContent.testimonials.slice(3),
-                ...testimonialsContent.testimonials.slice(3),
-                ...testimonialsContent.testimonials.slice(3),
+                ...testimonialsContent.lowerRow,
+                ...testimonialsContent.lowerRow,
+                ...testimonialsContent.lowerRow,
+                ...testimonialsContent.lowerRow,
+                ...testimonialsContent.lowerRow,
               ].map((testimonial, index) => (
                 <InView key={index} delay={0.1 * (index % 2)}>
                   <Card

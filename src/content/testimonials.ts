@@ -8,7 +8,7 @@ export const testimonialsContent = {
     secondary:
       "Don't just take our word for it - hear from some of our satisfied clients",
   },
-  testimonials: [
+  upperRow: [
     {
       name: "Nick Liverman",
       role: "CEO at Old World Labs",
@@ -27,6 +27,14 @@ export const testimonialsContent = {
       content:
         "Working with webvise was straightforward and efficient. They understood our vision and delivered a solution that helps us serve our customers better.",
     },
+    {
+      name: "Stuart Wheeler",
+      role: "CTO at dimx",
+      content:
+        "Their deep understanding of modern web technologies and AI integration capabilities helped us create a cutting-edge platform that exceeded our expectations.",
+    },
+  ],
+  lowerRow: [
     {
       name: "Sascha Frey",
       role: "CEO at petX",
