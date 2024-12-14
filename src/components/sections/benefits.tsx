@@ -33,46 +33,24 @@ export function Benefits({ id }: BenefitsProps) {
             <InView
               key={benefit.title}
               delay={0.15 * ((index + 1) % 3) + 0.1}
-              className="group relative"
+              className="group"
             >
-              {/* Connecting lines */}
-              {index < 2 && (
-                <div className="absolute left-full top-24 hidden h-px w-8 -translate-x-4 bg-border lg:block" />
-              )}
-
-              {/* Card */}
-              <div className="relative h-full space-y-6 rounded-3xl p-8">
-                {/* Glowing background */}
+              <div className="relative h-full space-y-6 rounded-3xl border bg-card p-8 transition-all duration-300 hover:border-foreground/20">
+                {/* Icon */}
                 <div
                   className={cn(
-                    "absolute inset-0 -z-10 rounded-3xl opacity-[0.03] blur-xl transition-opacity duration-500",
-                    "group-hover:opacity-10"
+                    "flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110",
+                    "bg-background"
                   )}
-                  style={{ background: benefit.color }}
-                />
-
-                {/* Icon */}
-                <div className="relative">
-                  <div
-                    className={cn(
-                      "absolute inset-0 opacity-10 blur-2xl transition-opacity duration-500",
-                      "group-hover:opacity-25"
-                    )}
-                    style={{ background: benefit.color }}
+                  style={{
+                    boxShadow: `inset 0 0 0 1px ${benefit.color}20`,
+                  }}
+                >
+                  <benefit.icon
+                    className="h-7 w-7"
+                    style={{ color: benefit.color }}
+                    strokeWidth={1.5}
                   />
-                  <div
-                    className={cn(
-                      "relative flex h-16 w-16 items-center justify-center rounded-2xl transition-transform duration-500",
-                      "group-hover:scale-110"
-                    )}
-                    style={{ background: `${benefit.color}08` }}
-                  >
-                    <benefit.icon
-                      className="h-8 w-8"
-                      style={{ color: `${benefit.color}CC` }}
-                      strokeWidth={1.5}
-                    />
-                  </div>
                 </div>
 
                 {/* Content */}
@@ -89,10 +67,14 @@ export function Benefits({ id }: BenefitsProps) {
                     <div
                       key={metric}
                       className={cn(
-                        "rounded-full px-4 py-1.5 text-sm transition-colors duration-300",
-                        "border border-border/50",
+                        "rounded-full px-4 py-1.5 text-sm",
+                        "border transition-colors duration-300",
                         "group-hover:border-border"
                       )}
+                      style={{
+                        borderColor: `${benefit.color}10`,
+                        background: `${benefit.color}05`,
+                      }}
                     >
                       {metric}
                     </div>

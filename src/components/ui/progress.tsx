@@ -7,7 +7,13 @@ import { cn } from "@/lib/utils";
 
 interface ProgressProps
   extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {
-  variant?: "default" | "accent1" | "accent2" | "accent3";
+  variant?:
+    | "default"
+    | "accent1"
+    | "accent2"
+    | "accent3"
+    | "accent4"
+    | "accent5";
 }
 
 const Progress = React.forwardRef<
@@ -23,6 +29,8 @@ const Progress = React.forwardRef<
         "bg-[hsl(var(--accent-1))]/20": variant === "accent1",
         "bg-[hsl(var(--accent-2))]/20": variant === "accent2",
         "bg-[hsl(var(--accent-3))]/20": variant === "accent3",
+        "bg-[hsl(var(--accent-4))]/20": variant === "accent4",
+        "bg-[hsl(var(--accent-5))]/20": variant === "accent5",
       },
       className
     )}
@@ -36,6 +44,8 @@ const Progress = React.forwardRef<
           "bg-[hsl(var(--accent-1))]": variant === "accent1",
           "bg-[hsl(var(--accent-2))]": variant === "accent2",
           "bg-[hsl(var(--accent-3))]": variant === "accent3",
+          "bg-[hsl(var(--accent-4))]": variant === "accent4",
+          "bg-[hsl(var(--accent-5))]": variant === "accent5",
         },
         "relative after:absolute after:inset-0 after:animate-[shimmer_2s_infinite] after:bg-gradient-to-r after:from-transparent after:via-white/10 after:to-transparent"
       )}

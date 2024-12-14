@@ -1,3 +1,5 @@
+"use client";
+
 import { ContactForm } from "@/components/forms/contact-form";
 import {
   Accordion,
@@ -8,7 +10,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { contactContent, faqContent } from "@/content/contact";
-import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
 interface ContactSectionProps {
@@ -46,14 +47,7 @@ export function ContactSection({ id }: ContactSectionProps) {
                 hours.
               </p>
             </div>
-            <div
-              className={cn(
-                "rounded-lg border bg-card/50 p-8 backdrop-blur",
-                "supports-[backdrop-filter]:bg-background/60",
-                "ring-1 ring-inset ring-[hsl(var(--accent-1))]",
-                "h-fit"
-              )}
-            >
+            <div className="rounded-lg border bg-card p-8">
               <ContactForm />
             </div>
           </div>
@@ -73,17 +67,11 @@ export function ContactSection({ id }: ContactSectionProps) {
               </p>
             </div>
 
-            <div
-              className={cn(
-                "rounded-lg border bg-card/50 p-8 backdrop-blur",
-                "supports-[backdrop-filter]:bg-background/60",
-                "space-y-6"
-              )}
-            >
+            <div className="space-y-6">
               {faqContent.tabs.map((tab) => (
                 <div key={tab.value}>
                   <div className="mb-3 flex items-center gap-4">
-                    <h4 className="text-sm font-medium text-[hsl(var(--accent-1))]">
+                    <h4 className="text-sm font-medium text-foreground">
                       {tab.label}
                     </h4>
                     <Separator className="flex-1" />
@@ -99,7 +87,7 @@ export function ContactSection({ id }: ContactSectionProps) {
                         value={`${tab.value}-${index}`}
                         className="border-none"
                       >
-                        <AccordionTrigger className="rounded-md bg-muted/40 px-4 py-3 text-left hover:bg-muted/60 hover:no-underline [&[data-state=open]]:bg-muted/60">
+                        <AccordionTrigger className="px-4 py-3 text-left hover:text-foreground/80 hover:no-underline">
                           {faq.question}
                         </AccordionTrigger>
                         <AccordionContent className="px-4 pt-2 text-sm text-muted-foreground">

@@ -6,7 +6,6 @@ import { heroContent } from "@/content/hero";
 import { cn } from "@/lib/utils";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { InView } from "../animations/in-view";
-import Particles from "../ui/particles";
 
 interface HeroProps {
   id?: string;
@@ -25,23 +24,6 @@ export function Hero({ id }: HeroProps) {
       id={id}
       className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden px-4 pb-12 text-center"
     >
-      <InView delay={0.1}>
-        <div className="pointer-events-none absolute inset-0 hidden sm:block">
-          <Particles
-            className="absolute inset-0"
-            quantity={100}
-            ease={80}
-            staticity={50}
-            size={0.4}
-          />
-        </div>
-      </InView>
-
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[15%] top-1/4 h-24 w-24 animate-float-slow rounded-full bg-[hsl(var(--accent-1))] opacity-[0.15] blur-xl" />
-        <div className="absolute right-[15%] top-1/3 h-32 w-32 animate-float rounded-full bg-[hsl(var(--accent-2))] opacity-[0.15] blur-xl" />
-      </div>
-
       <div className="flex max-w-5xl flex-col items-center space-y-8">
         <InView delay={0.1}>
           <div className="flex flex-wrap items-center justify-center gap-3">

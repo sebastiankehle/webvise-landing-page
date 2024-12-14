@@ -15,26 +15,13 @@ export function Solutions({ id }: SolutionsProps) {
   const getAccentColor = (index: number) => {
     switch (index) {
       case 0:
-        return "text-[hsl(var(--accent-1))]";
+        return "text-[hsl(var(--accent-1))]"; // Purple for first card
       case 1:
-        return "text-[hsl(var(--accent-2))]";
+        return "text-[hsl(var(--accent-2))]"; // Pink for middle (featured) card
       case 2:
-        return "text-[hsl(var(--accent-3))]";
+        return "text-[hsl(var(--accent-3))]"; // Blue for last card
       default:
-        return "";
-    }
-  };
-
-  const getAccentBg = (index: number) => {
-    switch (index) {
-      case 0:
-        return "bg-[hsl(var(--accent-1))]";
-      case 1:
-        return "bg-[hsl(var(--accent-2))]";
-      case 2:
-        return "bg-[hsl(var(--accent-3))]";
-      default:
-        return "";
+        return "text-foreground";
     }
   };
 
@@ -68,6 +55,7 @@ export function Solutions({ id }: SolutionsProps) {
                     "lg:scale-105",
                     "lg:-mt-4 lg:mb-4",
                     "lg:h-[39rem]",
+                    "border-[hsl(var(--accent-2))]",
                   ]
                 )}
               >
@@ -86,8 +74,8 @@ export function Solutions({ id }: SolutionsProps) {
                 <div className="mb-6 space-y-4">
                   <div
                     className={cn(
-                      "w-fit rounded-2xl p-3 transition-colors",
-                      getAccentBg(index) + "/10"
+                      "inline-flex rounded-2xl p-3",
+                      "transition-transform duration-300 group-hover:scale-105"
                     )}
                   >
                     <solution.icon
@@ -120,14 +108,9 @@ export function Solutions({ id }: SolutionsProps) {
                       key={feature.title}
                       className="grid grid-cols-[auto,1fr] items-start gap-4"
                     >
-                      <div
-                        className={cn(
-                          "rounded-lg p-2",
-                          getAccentBg(index) + "/5"
-                        )}
-                      >
+                      <div className="rounded-lg p-2">
                         <feature.icon
-                          className={cn("h-4 w-4", getAccentColor(index))}
+                          className="h-4 w-4 text-foreground"
                           strokeWidth={1.5}
                         />
                       </div>

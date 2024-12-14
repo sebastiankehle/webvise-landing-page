@@ -11,31 +11,20 @@ interface ProcessProps {
 }
 
 export function Process({ id }: ProcessProps) {
-  // Helper function to get accent color based on index
   const getAccentColor = (index: number) => {
-    switch (index % 3) {
+    switch (index) {
       case 0:
-        return "text-[hsl(var(--accent-1))]";
+        return "text-[hsl(var(--accent-1))]"; // Purple
       case 1:
-        return "text-[hsl(var(--accent-2))]";
+        return "text-[hsl(var(--accent-2))]"; // Pink
       case 2:
-        return "text-[hsl(var(--accent-3))]";
+        return "text-[hsl(var(--accent-3))]"; // Blue
+      case 3:
+        return "text-[hsl(var(--accent-4))]"; // Teal
+      case 4:
+        return "text-[hsl(var(--accent-5))]"; // Emerald
       default:
-        return "";
-    }
-  };
-
-  // Helper function to get accent background based on index
-  const getAccentBg = (index: number) => {
-    switch (index % 3) {
-      case 0:
-        return "bg-[hsl(var(--accent-1))]";
-      case 1:
-        return "bg-[hsl(var(--accent-2))]";
-      case 2:
-        return "bg-[hsl(var(--accent-3))]";
-      default:
-        return "";
+        return "text-foreground";
     }
   };
 
@@ -55,19 +44,13 @@ export function Process({ id }: ProcessProps) {
         </div>
 
         <div className="relative mt-16">
-          {/* Connecting Line */}
-          <div
-            className={cn(
-              "absolute left-0 top-24 hidden h-[1px] w-full transition-colors duration-300 md:block"
-            )}
-          >
-            <div className="relative h-full w-full">
-              <div className="absolute h-full w-full bg-border/50" />
-              <div className="absolute h-full w-1/5 animate-[flow_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="absolute left-0 right-0 top-12 hidden h-px md:block">
+            <div className="mx-auto max-w-[calc(100%-4rem)]">
+              <div className="h-px bg-border/50" />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
             {processContent.steps.slice(0, 5).map((step, index) => (
               <InView
                 key={step.title}
@@ -76,66 +59,30 @@ export function Process({ id }: ProcessProps) {
               >
                 <Card
                   className={cn(
-                    "relative overflow-hidden p-6",
-                    "transition-all duration-500",
+                    "relative flex h-full flex-col p-6",
+                    "transition-all duration-300",
                     "border-border/50 hover:border-border",
-                    "before:absolute before:left-1/2 before:top-0 before:h-4 before:w-[1px] before:-translate-x-1/2 before:bg-border/50 before:content-[''] md:before:hidden",
-                    index !== 0 && "mt-8 md:mt-0",
-                    index % 2 === 0 ? "md:translate-y-8" : "md:-translate-y-8"
+                    index !== 0 && "mt-8 md:mt-0"
                   )}
                 >
-                  {/* Animated Background */}
                   <div
                     className={cn(
-                      "absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
-                      "bg-gradient-to-br from-transparent via-[hsl(var(--accent-1))]/5 to-transparent",
-                      index % 3 === 1 && "via-[hsl(var(--accent-2))]/5",
-                      index % 3 === 2 && "via-[hsl(var(--accent-3))]/5"
+                      "inline-flex rounded-2xl p-3",
+                      "transition-transform duration-300 group-hover:scale-105"
                     )}
-                  />
-
-                  <div className="space-y-4">
-                    {/* Step Number */}
-                    <span
-                      className={cn(
-                        "block text-sm font-medium",
-                        getAccentColor(index)
-                      )}
-                    >
-                      Step {(index + 1).toString().padStart(2, "0")}
-                    </span>
-
-                    {/* Icon */}
-                    <div
-                      className={cn(
-                        "flex h-10 w-10 items-center justify-center rounded-xl transition-transform duration-500 group-hover:scale-110",
-                        getAccentBg(index) + "/10"
-                      )}
-                    >
-                      <step.icon
-                        className={cn("h-5 w-5", getAccentColor(index))}
-                        strokeWidth={1.5}
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {step.description}
-                      </p>
-                    </div>
+                  >
+                    <step.icon
+                      className={cn("h-6 w-6", getAccentColor(index))}
+                      strokeWidth={1.5}
+                    />
                   </div>
 
-                  {/* Bottom Accent */}
-                  <div
-                    className={cn(
-                      "absolute bottom-0 left-0 h-0.5 w-full opacity-0 transition-opacity duration-500 group-hover:opacity-100",
-                      "bg-gradient-to-r from-transparent via-[hsl(var(--accent-1))]/50 to-transparent",
-                      index % 3 === 1 && "via-[hsl(var(--accent-2))]/50",
-                      index % 3 === 2 && "via-[hsl(var(--accent-3))]/50"
-                    )}
-                  />
+                  <div className="flex-1">
+                    <h3 className="mb-2 text-lg font-semibold">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground">
+                      {step.description}
+                    </p>
+                  </div>
                 </Card>
               </InView>
             ))}
