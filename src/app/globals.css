@@ -25,19 +25,19 @@ body {
     --accent-foreground: 0 0% 9%;
 
     /* Light Mode Accent Colors */
-    --accent-1: 262 83% 58%; /* Vibrant Purple */
-    --accent-2: 328 85% 64%; /* Bright Pink */
-    --accent-3: 221 83% 53%; /* Royal Blue */
-    --accent-4: 187 85% 43%; /* Teal */
-    --accent-5: 152 81% 42%; /* Emerald */
+    --accent-1: 271 81% 56%; /* Solana Purple */
+    --accent-2: 199 89% 48%; /* Electric Blue */
+    --accent-3: 166 95% 43%; /* Solana Teal */
+    --accent-4: 154 89% 45%; /* Bright Green */
+    --accent-5: 140 84% 39%; /* Forest Green */
 
     /* Light Mode Ring/Hover/Border variants */
-    --ring-accent-1: 262 83% 58% / 0.3;
-    --ring-accent-2: 328 85% 64% / 0.3;
-    --hover-accent-1: 262 83% 58% / 0.1;
-    --hover-accent-2: 328 85% 64% / 0.1;
-    --border-accent-1: 262 83% 58% / 0.2;
-    --border-accent-2: 328 85% 64% / 0.2;
+    --ring-accent-1: 271 81% 56% / 0.3;
+    --ring-accent-2: 199 89% 48% / 0.3;
+    --hover-accent-1: 271 81% 56% / 0.1;
+    --hover-accent-2: 199 89% 48% / 0.1;
+    --border-accent-1: 271 81% 56% / 0.2;
+    --border-accent-2: 199 89% 48% / 0.2;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -64,20 +64,20 @@ body {
     --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
 
-    /* Dark Mode Accent Colors */
-    --accent-1: 264 89% 72%; /* Brighter Purple */
-    --accent-2: 328 95% 74%; /* Vivid Pink */
-    --accent-3: 221 93% 67%; /* Bright Blue */
-    --accent-4: 187 92% 55%; /* Bright Teal */
-    --accent-5: 152 85% 55%; /* Bright Emerald */
+    /* Dark Mode Accent Colors - Brighter for dark theme */
+    --accent-1: 271 85% 65%; /* Brighter Purple */
+    --accent-2: 199 95% 58%; /* Brighter Electric Blue */
+    --accent-3: 166 90% 50%; /* Brighter Teal */
+    --accent-4: 154 95% 50%; /* Brighter Green */
+    --accent-5: 140 90% 45%; /* Brighter Forest */
 
     /* Dark Mode Ring/Hover/Border variants */
-    --ring-accent-1: 264 89% 72% / 0.3;
-    --ring-accent-2: 328 95% 74% / 0.3;
-    --hover-accent-1: 264 89% 72% / 0.1;
-    --hover-accent-2: 328 95% 74% / 0.1;
-    --border-accent-1: 264 89% 72% / 0.2;
-    --border-accent-2: 328 95% 74% / 0.2;
+    --ring-accent-1: 271 85% 65% / 0.3;
+    --ring-accent-2: 199 95% 58% / 0.3;
+    --hover-accent-1: 271 85% 65% / 0.1;
+    --hover-accent-2: 199 95% 58% / 0.1;
+    --border-accent-1: 271 85% 65% / 0.2;
+    --border-accent-2: 199 95% 58% / 0.2;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
