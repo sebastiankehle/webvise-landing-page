@@ -108,7 +108,7 @@ export function Testimonials({ id }: TestimonialsProps) {
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
 
             {/* First row marquee */}
-            <div className="animate-marquee flex gap-8 [--duration:90s]">
+            <div className="animate-marquee flex gap-8 [--duration:120s]">
               {[
                 ...testimonialsContent.upperRow,
                 ...testimonialsContent.upperRow,
@@ -146,7 +146,7 @@ export function Testimonials({ id }: TestimonialsProps) {
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
 
             {/* Second row marquee */}
-            <div className="animate-marquee-reverse flex gap-8 [--duration:95s]">
+            <div className="animate-marquee-reverse flex gap-8 [--duration:140s]">
               {[
                 ...testimonialsContent.lowerRow,
                 ...testimonialsContent.lowerRow,

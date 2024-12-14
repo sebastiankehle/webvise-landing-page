@@ -4,29 +4,40 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { processContent } from "@/content/process";
 import { cn } from "@/lib/utils";
+import { useRef } from "react";
 import { InView } from "../animations/in-view";
+import { AnimatedBeam } from "../ui/animated-beam";
 
 interface ProcessProps {
   id?: string;
 }
 
 export function Process({ id }: ProcessProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const step1Ref = useRef<HTMLDivElement>(null);
+  const step2Ref = useRef<HTMLDivElement>(null);
+  const step3Ref = useRef<HTMLDivElement>(null);
+  const step4Ref = useRef<HTMLDivElement>(null);
+  const step5Ref = useRef<HTMLDivElement>(null);
+
   const getAccentColor = (index: number) => {
     switch (index) {
       case 0:
-        return "text-[hsl(var(--accent-1))]"; // Purple
+        return "text-[hsl(var(--accent-1))]";
       case 1:
-        return "text-[hsl(var(--accent-2))]"; // Pink
+        return "text-[hsl(var(--accent-2))]";
       case 2:
-        return "text-[hsl(var(--accent-3))]"; // Blue
+        return "text-[hsl(var(--accent-3))]";
       case 3:
-        return "text-[hsl(var(--accent-4))]"; // Teal
+        return "text-[hsl(var(--accent-4))]";
       case 4:
-        return "text-[hsl(var(--accent-5))]"; // Emerald
+        return "text-[hsl(var(--accent-5))]";
       default:
         return "text-foreground";
     }
   };
+
+  const stepRefs = [step1Ref, step2Ref, step3Ref, step4Ref, step5Ref];
 
   return (
     <section id={id} className="relative px-4 py-24">
@@ -44,48 +55,60 @@ export function Process({ id }: ProcessProps) {
         </div>
 
         <div className="relative mt-16">
-          <div className="absolute left-0 right-0 top-12 hidden h-px md:block">
-            <div className="mx-auto max-w-[calc(100%-4rem)]">
-              <div className="h-px bg-border/50" />
+          <div className="relative" ref={containerRef}>
+            <div className="pointer-events-none absolute inset-0 hidden md:block">
+              {stepRefs.slice(0, -1).map((fromRef, index) => (
+                <AnimatedBeam
+                  key={index}
+                  containerRef={containerRef}
+                  fromRef={fromRef}
+                  toRef={stepRefs[index + 1]}
+                  className="hidden md:block"
+                  gradientStartColor={`hsl(var(--accent-${index + 1}))`}
+                  gradientStopColor={`hsl(var(--accent-${index + 2}))`}
+                />
+              ))}
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
-            {processContent.steps.slice(0, 5).map((step, index) => (
-              <InView
-                key={step.title}
-                delay={0.15 * (index + 1)}
-                className="group"
-              >
-                <Card
-                  className={cn(
-                    "relative flex h-full flex-col p-6",
-                    "transition-all duration-300",
-                    "border-border/50 hover:border-border",
-                    index !== 0 && "mt-8 md:mt-0"
-                  )}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
+              {processContent.steps.slice(0, 5).map((step, index) => (
+                <InView
+                  key={step.title}
+                  delay={0.15 * (index + 1)}
+                  className="group"
                 >
-                  <div
+                  <Card
+                    ref={stepRefs[index]}
                     className={cn(
-                      "inline-flex rounded-2xl p-3",
-                      "transition-transform duration-300 group-hover:scale-105"
+                      "relative flex h-full flex-col p-6",
+                      "transition-all duration-300",
+                      "border-border/50 hover:border-border"
                     )}
                   >
-                    <step.icon
-                      className={cn("h-6 w-6", getAccentColor(index))}
-                      strokeWidth={1.5}
-                    />
-                  </div>
+                    <div
+                      className={cn(
+                        "inline-flex rounded-2xl p-3",
+                        "transition-transform duration-300 group-hover:scale-105"
+                      )}
+                    >
+                      <step.icon
+                        className={cn("h-6 w-6", getAccentColor(index))}
+                        strokeWidth={1.5}
+                      />
+                    </div>
 
-                  <div className="flex-1">
-                    <h3 className="mb-2 text-lg font-semibold">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {step.description}
-                    </p>
-                  </div>
-                </Card>
-              </InView>
-            ))}
+                    <div className="flex-1">
+                      <h3 className="mb-2 text-lg font-semibold">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
+                  </Card>
+                </InView>
+              ))}
+            </div>
           </div>
         </div>
       </InView>
