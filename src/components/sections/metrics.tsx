@@ -94,7 +94,7 @@ export function Metrics({ id }: MetricsProps) {
                   className={cn(
                     "cursor-pointer bg-background transition-colors",
                     activeMetric === "clicks"
-                      ? "border-[hsl(var(--accent-2))]"
+                      ? "border-[hsl(var(--accent-3))]"
                       : "border-border"
                   )}
                   onClick={() => setActiveMetric("clicks")}
@@ -111,7 +111,7 @@ export function Metrics({ id }: MetricsProps) {
                         <div
                           className={cn(
                             "mt-1 flex w-fit rounded-md px-2 py-0.5 text-sm font-medium sm:mt-0",
-                            "bg-[hsl(var(--accent-2))]/10"
+                            "bg-[hsl(var(--accent-3))]/10"
                           )}
                           style={{ color: metricsContent.metrics.clicks.color }}
                         >

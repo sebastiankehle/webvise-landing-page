@@ -29,7 +29,7 @@ export const metricsContent = {
       label: "Clicks",
       value: 11842,
       growth: "+1003%",
-      color: "hsl(var(--accent-2))",
+      color: "hsl(var(--accent-3))",
     },
   },
   data: [
