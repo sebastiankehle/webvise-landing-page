@@ -93,8 +93,8 @@ export function Hero({ id }: HeroProps) {
               onClick={() => handleScroll(heroContent.cta.secondary.href)}
               className={cn(
                 "rounded-full px-8 transition-all",
-                "border border-[hsl(var(--accent-2))]",
-                "hover:border-[hsl(var(--accent-2))] hover:brightness-125",
+                "border border-[hsl(var(--accent-3))]",
+                "hover:border-[hsl(var(--accent-3))] hover:brightness-125",
                 "hover:bg-transparent"
               )}
             >
