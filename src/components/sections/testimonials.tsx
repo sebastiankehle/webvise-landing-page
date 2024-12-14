@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { testimonialsContent } from "@/content/testimonials";
+import { cn } from "@/lib/utils";
 import { InView } from "../animations/in-view";
 
 interface TestimonialsProps {
@@ -75,8 +76,8 @@ export function Testimonials({ id }: TestimonialsProps) {
             <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background to-transparent" />
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
 
-            {/* Marquee content */}
-            <div className="animate-marquee flex gap-8 [--duration:60s]">
+            {/* First row marquee */}
+            <div className="animate-marquee flex gap-8 [--duration:90s]">
               {[
                 ...testimonialsContent.testimonials.slice(0, 3),
                 ...testimonialsContent.testimonials.slice(0, 3),
@@ -85,7 +86,13 @@ export function Testimonials({ id }: TestimonialsProps) {
                 ...testimonialsContent.testimonials.slice(0, 3),
               ].map((testimonial, index) => (
                 <InView key={index} delay={0.1 * (index % 3)}>
-                  <Card className="flex h-[180px] w-[350px] flex-col justify-between p-5">
+                  <Card
+                    className={cn(
+                      "flex h-[180px] w-[350px] flex-col justify-between p-5",
+                      index % 3 === 1 &&
+                        "border-[hsl(var(--accent-1))] shadow-sm"
+                    )}
+                  >
                     <p className="line-clamp-3 text-muted-foreground">
                       &ldquo;{testimonial.content}&rdquo;
                     </p>
@@ -107,8 +114,8 @@ export function Testimonials({ id }: TestimonialsProps) {
             <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background to-transparent" />
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
 
-            {/* Marquee content */}
-            <div className="animate-marquee-reverse flex gap-8 [--duration:65s]">
+            {/* Second row marquee */}
+            <div className="animate-marquee-reverse flex gap-8 [--duration:95s]">
               {[
                 ...testimonialsContent.testimonials.slice(3),
                 ...testimonialsContent.testimonials.slice(3),
@@ -117,7 +124,13 @@ export function Testimonials({ id }: TestimonialsProps) {
                 ...testimonialsContent.testimonials.slice(3),
               ].map((testimonial, index) => (
                 <InView key={index} delay={0.1 * (index % 2)}>
-                  <Card className="flex h-[180px] w-[350px] flex-col justify-between p-5">
+                  <Card
+                    className={cn(
+                      "flex h-[180px] w-[350px] flex-col justify-between p-5",
+                      index % 4 === 2 &&
+                        "border-[hsl(var(--accent-3))] shadow-sm"
+                    )}
+                  >
                     <p className="line-clamp-3 text-muted-foreground">
                       &ldquo;{testimonial.content}&rdquo;
                     </p>
