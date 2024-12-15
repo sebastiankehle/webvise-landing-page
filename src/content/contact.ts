@@ -13,34 +13,34 @@ export type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export const contactContent = {
   badge: {
-    label: "Get Started",
+    label: "Start Building",
   },
   headline: {
-    title: "Let's Build Something Great",
+    title: "Let's Make It Happen",
     description:
-      "Tell me about your project, and I'll help you bring it to life with modern technology.",
+      "Share your vision, and we'll help you find the fastest path to market.",
   },
   form: {
     types: [
-      { label: "Get Quote", value: "quote" },
-      { label: "Technical Questions", value: "general" },
-      { label: "Project Support", value: "support" },
+      { label: "Get Project Quote", value: "quote" },
+      { label: "Technical Discussion", value: "general" },
+      { label: "Product Support", value: "support" },
     ],
     budgets: [
-      { label: "Basic Website < €5k", value: "<5k" },
-      { label: "Custom Website €5k-€10k", value: "5k-10k" },
-      { label: "Web Application €10k-€25k", value: "10k-25k" },
-      { label: "AI Integration €25k-€50k", value: "25k-50k" },
-      { label: "Custom Solution > €50k", value: ">50k" },
+      { label: "Landing Page < €5k", value: "<5k" },
+      { label: "MVP €5k-€10k", value: "5k-10k" },
+      { label: "Full Product €10k-€25k", value: "10k-25k" },
+      { label: "Scale Up €25k-€50k", value: "25k-50k" },
+      { label: "Enterprise > €50k", value: ">50k" },
     ],
-    sending: "Initiating Contact...",
-    success: "Connection Established!",
+    sending: "Starting Your Journey...",
+    success: "Ready for Takeoff!",
     successDescription:
-      "Our team will reach out within 24 hours with a strategic plan.",
-    error: "Connection Failed",
+      "We'll get back to you within 24 hours with a clear action plan.",
+    error: "Connection Issue",
     errorDescription:
-      "Please try again or reach out directly at contact@webvise.io",
-    send: "Start Your Growth Journey",
+      "Please try again or email us directly at mail@webvise.io",
+    send: "Start Your Project",
   },
 } as const;
 
@@ -51,19 +51,19 @@ export const faqContent = {
       value: "general",
       questions: [
         {
-          question: "How long does a project take?",
+          question: "How quickly can we launch?",
           answer:
-            "Most websites take 4-6 weeks, and web applications 8-12 weeks. Timeline varies based on complexity and features needed.",
+            "Landing pages in 4-6 weeks, MVPs in 8-12 weeks. We focus on getting your core features to market fast, then iterate based on user feedback.",
         },
         {
-          question: "What's your development process?",
+          question: "What's your development approach?",
           answer:
-            "I follow an agile approach with weekly updates and regular deployments. You'll always know the project status and can provide feedback throughout.",
+            "We work in weekly sprints with regular demos. You'll see progress every week and can adjust direction based on what you learn.",
         },
         {
-          question: "Do you provide support after launch?",
+          question: "Do you provide post-launch support?",
           answer:
-            "Yes, I offer maintenance and support packages to keep your solution running smoothly and help with any updates needed.",
+            "Yes, we offer flexible support packages to help you scale. From bug fixes to feature additions, we're here to help you grow.",
         },
       ],
     },
@@ -72,19 +72,19 @@ export const faqContent = {
       value: "technical",
       questions: [
         {
-          question: "What's your tech stack?",
+          question: "What technologies do you use?",
           answer:
-            "We use enterprise-grade technologies: Next.js 14, TypeScript, Node.js, and various AI frameworks. Our stack is chosen for performance, scalability, and future-proof architecture.",
+            "We use proven tech that scales: Next.js, React, Flutter, and modern AI frameworks. Every choice is made to support rapid development and future growth.",
         },
         {
           question: "How do you handle scaling?",
           answer:
-            "Our architecture is built for scale from day one. We use microservices, serverless computing, and advanced caching strategies to handle millions of users efficiently.",
+            "Our architecture is cloud-native from day one. We use microservices and serverless to ensure your product can scale from hundreds to millions of users.",
         },
         {
-          question: "Can you integrate with existing systems?",
+          question: "Can you integrate with our existing stack?",
           answer:
-            "Absolutely. We specialize in seamless integrations, whether it's legacy systems, third-party APIs, or custom enterprise solutions.",
+            "Absolutely. We have experience connecting with various APIs, databases, and legacy systems. We'll find the best way to enhance your existing tech.",
         },
       ],
     },
@@ -93,19 +93,19 @@ export const faqContent = {
       value: "commercial",
       questions: [
         {
-          question: "What's your pricing model?",
+          question: "How do you structure pricing?",
           answer:
-            "We offer strategic investment tiers based on your growth stage. Each tier is designed to maximize ROI with clear deliverables and success metrics.",
+            "We offer clear, milestone-based pricing tailored to your goals. Each package is designed to get you to a specific business outcome.",
         },
         {
-          question: "Do you offer fixed-price solutions?",
+          question: "What's included in the cost?",
           answer:
-            "Yes, we provide both fixed-price packages and custom engagements. Our pricing is transparent with no hidden costs, tied to clear business outcomes.",
+            "Everything needed for success: strategy, design, development, testing, deployment, and initial optimization. No hidden fees or surprises.",
         },
         {
-          question: "What's included in the investment?",
+          question: "Can we start small and scale up?",
           answer:
-            "Everything needed for success: strategy, development, testing, deployment, analytics, and initial growth support. Each package is designed for specific scaling milestones.",
+            "Yes! Many clients start with an MVP and expand based on market feedback. Our tech choices ensure you can grow without rebuilding.",
         },
       ],
     },

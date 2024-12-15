@@ -6,18 +6,18 @@ export interface MetricDataPoint {
 
 export const metricsContent = {
   badge: {
-    text: "Growth Metrics",
+    text: "Success Metrics",
     variant: "outline",
   },
   headline: {
-    primary: "Engineered for Scale",
+    primary: "Results That Matter",
     secondary:
-      "Our solutions consistently outperform industry standards, driving exponential growth for our clients.",
+      "Our products consistently outperform industry standards, helping founders reach their growth targets faster.",
   },
   description: {
-    views: "From zero to millions: Watch your user base grow exponentially.",
-    clicks:
-      "Turn visitors into customers with conversion-optimized experiences.",
+    views:
+      "Watch your user base grow exponentially with scalable architecture.",
+    clicks: "Convert visitors into active users with optimized experiences.",
   },
   metrics: {
     views: {

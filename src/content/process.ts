@@ -2,47 +2,47 @@ import { Code2, Lightbulb, Puzzle, Rocket, Target } from "lucide-react";
 
 export const processContent = {
   badge: {
-    text: "Our Process",
+    text: "How We Work",
     variant: "outline",
   },
   headline: {
-    primary: "From Idea to Reality",
+    primary: "From Idea to Impact",
     secondary:
-      "A proven development process that turns your vision into a successful digital product.",
+      "A proven process that turns your vision into reality, with clear milestones and constant communication.",
   },
   steps: [
     {
-      title: "Ideation",
+      title: "Strategy",
       description:
-        "We start by understanding your vision, goals, and requirements. Together, we shape the perfect solution for your business needs.",
+        "First, we align on your vision and goals. We map out the fastest path to your MVP and plan the features that will validate your idea.",
       icon: Lightbulb,
       color: "var(--accent-1)",
     },
     {
-      title: "Design",
+      title: "Blueprint",
       description:
-        "Transform ideas into intuitive interfaces. We create user-centric designs that look great and drive engagement.",
+        "We design the user experience and technical architecture. Every screen and feature is optimized for engagement and scalability.",
       icon: Puzzle,
       color: "var(--accent-2)",
     },
     {
-      title: "Development",
+      title: "Build",
       description:
-        "Using modern tech stack and best practices, we build your solution with clean, maintainable, and scalable code.",
+        "Rapid development with weekly demos. See your product take shape and give feedback that steers us in the right direction.",
       icon: Code2,
       color: "var(--accent-3)",
     },
     {
-      title: "Testing",
+      title: "Validate",
       description:
-        "Rigorous testing across devices and scenarios ensures your product works flawlessly for every user.",
+        "Rigorous testing across devices and use cases. We ensure your product is ready for real users and can handle growth.",
       icon: Target,
       color: "var(--accent-4)",
     },
     {
       title: "Launch",
       description:
-        "Smooth deployment and handover. We ensure your product goes live successfully and you're ready to grow.",
+        "Go live with confidence. We handle deployment, monitoring, and initial optimization based on real user data.",
       icon: Rocket,
       color: "var(--accent-5)",
     },

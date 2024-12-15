@@ -2,60 +2,61 @@ import { Bot, Code2, Layout, Smartphone } from "lucide-react";
 
 export const servicesContent = {
   badge: {
-    text: "Services",
+    text: "Our Services",
     variant: "outline",
   },
   headline: {
-    primary: "Full-Stack Excellence",
-    secondary: "Modern solutions engineered for growth.",
+    primary: "Tech That Delivers",
+    secondary:
+      "From landing pages to AI solutions, we build what founders need.",
   },
   services: [
     {
       title: "Web Development",
       description:
-        "High-performance web applications built with Next.js and React. Modern, scalable, and optimized for growth.",
+        "Full-stack applications built for growth. Whether it's an MVP or a scale-ready platform, we deliver products users love.",
       icon: Code2,
       features: [
         "Next.js & React",
-        "TypeScript & APIs",
-        "Performance First",
-        "Cloud Deployment",
+        "Rapid MVP Development",
+        "Scale-Ready Architecture",
+        "Real-Time Features",
       ],
     },
     {
-      title: "Web Design",
+      title: "Landing Pages",
       description:
-        "Professional websites with modern CMS. Perfect for marketing sites, blogs, and business presence.",
+        "High-converting landing pages that turn visitors into customers. Perfect for product launches and marketing campaigns.",
       icon: Layout,
       features: [
         "Webflow & WordPress",
-        "Custom Design",
-        "SEO Optimized",
-        "Content Management",
+        "Conversion Optimized",
+        "SEO & Analytics",
+        "A/B Testing Ready",
       ],
     },
     {
-      title: "App Development",
+      title: "Mobile Apps",
       description:
-        "Cross-platform mobile applications with Flutter. Native performance with single codebase efficiency.",
+        "Native-quality mobile apps that engage users. One codebase for iOS and Android, without compromising on performance.",
       icon: Smartphone,
       features: [
-        "Flutter & Dart",
-        "iOS & Android",
+        "Flutter Development",
+        "Cross-Platform Apps",
         "Native Features",
-        "App Store Ready",
+        "Offline Support",
       ],
     },
     {
       title: "AI Integration",
       description:
-        "Enhance your digital products with AI capabilities. From chatbots to automation, make your product smarter.",
+        "Give your product an AI edge. From smart automation to custom LLMs, we build AI features that deliver real value.",
       icon: Bot,
       features: [
-        "Agent Integration",
-        "Custom AI Features",
+        "Custom AI Models",
         "Process Automation",
         "Smart Analytics",
+        "Agent Systems",
       ],
     },
   ],

@@ -3,38 +3,37 @@ import { Code2, Rocket, Sparkles } from "lucide-react";
 export const heroContent = {
   badges: [
     {
-      text: "Web Development",
+      text: "Full-Stack Dev",
       variant: "outline",
       icon: Code2,
     },
     {
-      text: "AI Integration",
+      text: "AI Solutions",
       variant: "outline",
       icon: Sparkles,
     },
     {
-      text: "Growth Solutions",
+      text: "Startup Ready",
       variant: "outline",
       icon: Rocket,
     },
   ],
   headline: {
-    primary: "Turn Your Vision",
-    highlight: "Into Digital Reality",
+    primary: "We Build Your Idea",
+    highlight: "From Concept to Scale",
   },
   description: {
-    primary:
-      "Transforming ambitious ideas into high-performance digital products",
+    primary: "Turning ambitious ideas into market-ready products",
     secondary: "with modern tech stack and AI capabilities.",
-    emphasis: "From concept to launch in weeks, not months.",
+    emphasis: "Launch your MVP in weeks, not months.",
   },
   cta: {
     primary: {
-      text: "Start Your Project",
+      text: "Let's Build Together",
       href: "#contact",
     },
     secondary: {
-      text: "View Solutions",
+      text: "Explore Solutions",
       href: "#solutions",
     },
   },

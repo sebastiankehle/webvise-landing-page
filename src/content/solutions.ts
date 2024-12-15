@@ -15,90 +15,90 @@ import {
 
 export const solutionsContent = {
   badge: {
-    text: "Pricing",
+    text: "Solutions & Pricing",
     variant: "outline" as const,
   },
   headline: {
-    primary: "Choose Your Solution",
+    primary: "Pick Your Growth Path",
     secondary:
-      "From static websites to enterprise applications, we deliver scalable solutions tailored to your needs.",
+      "From rapid MVPs to full-scale digital products. Built for founders who move fast.",
   },
   solutions: [
     {
-      title: "Website",
-      description: "High-performance marketing and landing pages",
+      title: "Landing Page",
+      description:
+        "Convert visitors into customers with a high-impact landing page",
       icon: Globe,
       price: "€4,999",
       timeframe: "4-6 Weeks",
       features: [
         {
-          title: "Modern CMS",
-          description: "Webflow or WordPress with custom design & animations",
+          title: "Growth Ready",
+          description: "Customized Webflow or WordPress CMS",
           icon: Layout,
         },
         {
-          title: "Essential Features",
-          description: "Responsive design, CMS, Forms, Analytics, Blog",
+          title: "Conversion Focus",
+          description: "Lead capture, CRM integration, automated follow-ups",
           icon: Smartphone,
         },
         {
-          title: "Performance",
-          description: "SEO optimization, CDN, Core Web Vitals optimization",
+          title: "Speed Matters",
+          description: "Lightning-fast loading, SEO-optimized for day one",
           icon: Sparkles,
         },
       ],
-      highlight: "Quick Launch",
+      highlight: "Launch Fast",
     },
     {
-      title: "Web Application",
-      description: "Full-stack solutions with mobile integration",
+      title: "Digital Product",
+      description: "Full-stack web or mobile app ready for market validation",
       icon: Rocket,
       price: "€14,999",
       timeframe: "8-12 Weeks",
       features: [
         {
-          title: "Cutting Edge Frameworks",
-          description:
-            "Next.js for web, Flutter for mobile, database of choice",
+          title: "Modern Stack",
+          description: "Next.js or Flutter - built for rapid iteration",
           icon: Code2,
         },
         {
-          title: "Core Systems",
-          description: "Auth, API Gateway, File Storage",
+          title: "Core Features",
+          description: "Auth, payments, storage - everything to start selling",
           icon: Database,
         },
         {
-          title: "Advanced Features",
-          description: "Admin Dashboard, Analytics, Payments, Notifications",
+          title: "Startup Ready",
+          description: "Analytics dashboard, user management, real-time data",
           icon: Braces,
         },
       ],
-      highlight: "Most Popular",
+      highlight: "Founder Favorite",
     },
     {
-      title: "Enterprise",
-      description: "Custom solutions with advanced AI capabilities",
+      title: "Scale Up",
+      description: "Enterprise-grade solution with AI superpowers",
       icon: Bot,
       price: "From €29,999",
       timeframe: "12-16 Weeks",
       features: [
         {
-          title: "AI Integration",
-          description: "Custom LLMs, AI Media generation, Agent systems",
+          title: "AI Engine",
+          description: "Custom LLMs, workflow automation, Agent systems",
           icon: CircuitBoard,
         },
         {
-          title: "Infrastructure",
-          description: "Microservices, Auto-scaling, CI/CD, Monitoring",
+          title: "Built to Scale",
+          description: "Microservices, auto-scaling, performance monitoring",
           icon: Server,
         },
         {
-          title: "Enterprise Grade",
-          description: "SLA, ISO Compliance, 24/7 Support, Training",
+          title: "Enterprise Ready",
+          description: "SSO, compliance, SLA, dedicated support",
           icon: Shield,
         },
       ],
-      highlight: "Full Service",
+      highlight: "Full Power",
     },
   ],
 } as const;
