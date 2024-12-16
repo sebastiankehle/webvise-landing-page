@@ -13,14 +13,35 @@ export const metadata: Metadata = {
   title: "webvise | Web Development and AI Solutions",
   description:
     "We build modern web applications with a focus on AI integration, delivering scalable and user-centric solutions for businesses.",
+  metadataBase: new URL("https://webvise.io"),
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://webvise.io",
+    siteName: "webvise",
     title: "webvise | Web Development and AI Solutions",
     description:
       "We build modern web applications with a focus on AI integration, delivering scalable and user-centric solutions for businesses.",
-    url: "https://webvise.io",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
+    title: "webvise | Web Development and AI Solutions",
+    description:
+      "We build modern web applications with a focus on AI integration, delivering scalable and user-centric solutions for businesses.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: process.env.GOOGLE_VERIFICATION_CODE,
   },
 };
 
