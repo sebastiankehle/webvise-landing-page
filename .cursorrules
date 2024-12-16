@@ -1,68 +1,105 @@
-You are an expert in TypeScript, Node.js, Next.js 15 App Router, React 19, Shadcn UI, Radix UI and Tailwind.
+# Next.js 15 & React 19 Development Guidelines
 
-Code Style and Structure
+## Core Technologies
 
-- Write concise, technical TypeScript code with accurate examples.
-- Use functional and declarative programming patterns; avoid classes.
-- Prefer iteration and modularization over code duplication.
-- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
-- Structure files: exported component, subcomponents, helpers, static content, types.
+- Next.js 15 App Router
+- React 19
+- TypeScript
+- Shadcn UI / Radix UI
+- Tailwind CSS
+- PNPM Package Manager
 
-Naming Conventions
+## Code Style & Structure
 
-- Use lowercase with dashes for directories (e.g., components/auth-wizard).
-- Favor named exports for components.
+### Component Patterns
 
-TypeScript Usage
+- Use functional components with TypeScript interfaces
+- Avoid classes; prefer functional and declarative patterns
+- One component per file with named exports
+- Structure: exports, subcomponents, helpers, types, static content
 
-- Use TypeScript for all code; prefer interfaces over types.
-- Avoid enums; use maps instead.
-- Use functional components with TypeScript interfaces.
+### TypeScript Usage
 
-Syntax and Formatting
+- Prefer interfaces over types
+- Use maps instead of enums
+- Strong typing with explicit interfaces
+- Avoid 'any' and 'unknown' types
 
-- Use the "function" keyword for pure functions.
-- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
-- Use declarative JSX.
+### Naming Conventions
 
-UI and Styling
+- Directories: lowercase with dashes (e.g., auth-wizard)
+- Components: PascalCase
+- Functions: camelCase with verb prefixes (e.g., handleSubmit)
+- Variables: descriptive with auxiliary verbs (e.g., isLoading)
 
-- Use Shadcn UI, Radix, and Tailwind for components and styling.
-- Implement responsive design with Tailwind CSS; use a mobile-first approach.
+### File Structure
 
-Performance Optimization
+/src
+├── app/ # Next.js App Router pages
+├── components/ # React components
+│ ├── ui/ # Reusable UI components
+│ ├── sections/ # Page sections
+│ ├── animations/ # Animation components
+│ ├── layouts/ # Layout components
+│ └── forms/ # Form components
+├── content/ # Static content
+├── lib/ # Utilities
+├── types/ # TypeScript types
+└── utils/ # Helper functions
 
-- Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC).
-- Wrap client components in Suspense with fallback.
-- Use dynamic loading for non-critical components.
-- Optimize images: use WebP format, include size data, implement lazy loading.
+## UI & Styling
 
-Key Conventions
+- Use Shadcn UI components with Radix UI primitives
+- Tailwind CSS for styling (mobile-first approach)
+- Maintain consistent component interfaces
+- Follow accessibility best practices
 
-- Use 'nuqs' for URL search parameter state management.
-- Optimize Web Vitals (LCP, CLS, FID).
-- Limit 'use client':
-  - Favor server components and Next.js SSR.
-  - Use only for Web API access in small components.
-  - Avoid for data fetching or state management.
+## Performance Guidelines
 
-Package Manager and Dependencies
+- Default to React Server Components
+- Minimize client-side JavaScript:
+  - Limit 'use client' directives
+  - Reduce useEffect and setState usage
+  - Use Server Actions where possible
+- Image optimization:
+  - WebP format
+  - Include size attributes
+  - Implement lazy loading
+- Dynamic imports for non-critical components
+- Wrap client components in Suspense
 
-- Use pnpm as the package manager.
-- When installing packages with React 19:
-  - Use 'pnpm install --force' or '--legacy-peer-deps'
-  - Handle peer dependency conflicts appropriately
-- For shadcn/ui with Next.js 15 and React 19:
-  - Use CLI with appropriate flags when prompted
-  - Most core dependencies are React 19 compatible
-  - For recharts, add React 19 override in package.json
-  - Do not consider React 18 as a fallback
+## State Management
 
-IDE Configuration
+- URL state: Use 'nuqs' for search parameters
+- Server state: Prefer Server Components
+- Client state: Minimal, only when necessary
+- Forms: React Hook Form with Zod validation
 
-- Do not change my eslintrc.json file.
-- Do not change my prettierrc file.
-- Do not change my cursorrules file.
-- Do not change my vscode settings.
+## Package Management
 
-Follow Next.js docs for Data Fetching, Rendering, and Routing.
+- Use PNPM exclusively
+- React 19 installation:
+  - pnpm install --force
+  - Handle peer dependencies appropriately
+- Shadcn UI setup:
+  - Use CLI with React 19 flags
+  - Follow component installation guidelines
+
+## Development Workflow
+
+- Follow Next.js documentation for:
+  - Data fetching patterns
+  - Routing conventions
+  - Rendering strategies
+- Optimize for Core Web Vitals (LCP, CLS, FID)
+- Maintain existing configuration files:
+  - eslintrc.json
+  - prettierrc
+  - vscode settings
+
+## Code Quality
+
+- Write concise, self-documenting code
+- Modularize and avoid duplication
+- Use declarative patterns
+- Maintain consistent formatting
