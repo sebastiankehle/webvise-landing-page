@@ -2,11 +2,11 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { MobileMenuProvider } from "@/providers/mobile-menu-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
-
 const inter = Inter({
   subsets: ["latin"],
 });
@@ -51,6 +51,7 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
             <Toaster />
+            <SpeedInsights />
           </MobileMenuProvider>
         </ThemeProvider>
       </body>
