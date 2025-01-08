@@ -16,10 +16,10 @@ export const benefitsContent = {
       description:
         "Skip the endless planning. Our proven process gets your MVP in front of users fast, with a clear path to iterate based on real feedback.",
       icon: Gauge,
-      metrics: ["MVP in 6 Weeks", "Weekly Deployments", "Rapid Iterations"],
+      metrics: ["MVP in 4 Weeks", "Weekly Deployments", "Rapid Iterations"],
       color: "hsl(var(--accent-1))",
       stat: {
-        value: "4-6",
+        value: "2-4",
         label: "Week Launch",
       },
     },

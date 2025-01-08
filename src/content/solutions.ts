@@ -30,7 +30,7 @@ export const solutionsContent = {
         "Convert visitors into customers with a high-impact landing page",
       icon: Globe,
       price: "€4,999",
-      timeframe: "4-6 Weeks",
+      timeframe: "2-4 Weeks",
       features: [
         {
           title: "Growth Ready",
@@ -55,7 +55,7 @@ export const solutionsContent = {
       description: "Full-stack web or mobile app ready for market validation",
       icon: Rocket,
       price: "€14,999",
-      timeframe: "8-12 Weeks",
+      timeframe: "4-8 Weeks",
       features: [
         {
           title: "Modern Stack",
@@ -80,7 +80,7 @@ export const solutionsContent = {
       description: "Enterprise-grade solution with AI superpowers",
       icon: Bot,
       price: "From €29,999",
-      timeframe: "12-16 Weeks",
+      timeframe: "8-12 Weeks",
       features: [
         {
           title: "AI Engine",
