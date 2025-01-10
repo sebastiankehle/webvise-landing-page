@@ -2,11 +2,13 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { MobileMenuProvider } from "@/providers/mobile-menu-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
+
 const inter = Inter({
   subsets: ["latin"],
 });
@@ -40,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} flex min-h-screen flex-col antialiased`}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
